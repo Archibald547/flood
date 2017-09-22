@@ -1,10 +1,2961 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
+
+
+	<!DOCTYPE html>
+
+
+<html >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <title>The Community Forum</title>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+	<script src="//cdn.websitetoolbox.com/js/jquery.min.js" defer></script>
+<script language="JavaScript" type="text/javascript" src="//cdn.websitetoolbox.com/js/bootstrap.min.js" defer></script>
+<script language="JavaScript" type="text/javascript" src="//cdn.websitetoolbox.com/js/moment.js" defer></script>
+<script language="JavaScript" type="text/javascript" src="//cdn.websitetoolbox.com/textarea/forum1/tinymce/tinymce.min.js" defer></script>
+<script language="JavaScript" type="text/javascript" src="//cdn.websitetoolbox.com/js/mb/forum1_global.js" defer></script>
+<link rel="stylesheet" href="//cdn.websitetoolbox.com/css/bootstrap.css">
+
+
+
+
+
+		<link href="//cdn.websitetoolbox.com/users/tools/arcaded/angela.css?1" rel="stylesheet" type="text/css">
+
+
+
+<link href="//cdn.websitetoolbox.com/css/forum1_global.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+	<script language="JavaScript" type="text/javascript">
+	var global_hash = {sso_disabled : 1, AppId : '', perm_view_profiles : '1', forum_embed_url : '', date_format : '3', display_time : '0', uid : '200855', forum_SSO_login_url : '', less_variables : '', skin : 'angela', max_file_size : '51200'};
+
+	var	isPostRequest = 0;
+
+	if (typeof wtbx === 'undefined') var wtbx = {};
+	</script>
+
+
+
+
+
+
+</head>
+<body class="wt-body   nolinks"  data-theme="angela">
+	<div id="fb-root"></div>
+
+
+
+
+
+
+
+
+	<div id="body-wrapper">
+	  <div class="header-wrapper">
+		<header id="forum_header_fixed" class="fixed-header">
+			<div class="container">
+				<div class="nav-main-container col-xs-10">
+					<div class="nav-main">
+						<div class="push-panel">
+							<ul class="dropdown-menu left" role="menu">
+								<li><a href="/">Categories</a></li>
+
+									<li><a href="/register/members">Members</a></li>
+
+
+							</ul>
+							<a class="pull-left" id="links-nav">
+								<i class="icon icon-menu" data-placement="bottom" title="Main menu"></i>
+							</a>
+							<h3 class="logo-wrapper" id="logo_wrapper">
+								<a href="/" id="logo_or_title">
+
+										<img src="https://s3.amazonaws.com/files.websitetoolbox.com/200855/2880467" id="forum_logo">
+
+									<span class="hidden">The Community Forum</span>
+								</a>
+							</h3>
+						</div>
+
+
+
+
+						<div class="search-wrapper pull">
+							<span class="glyphicon glyphicon-search"></span>
+							<form name="inlineSearchForm" method="get" action="/search" id="inlineSearchForm">
+								<input id="inline_search_box" type="text" class="search-form form-control form-inline" name="keywords" value="" placeholder="Search">
+								<input type="hidden" id="basicSearch" name="action" value="doSearch">
+								<input type="hidden" name="search" value="true">
+								<input type="hidden" name="member" value="">
+								<input type="hidden" name="searchin" id="searchin" value="Topics">
+
+
+							</form>
+
+							<div class="btn-group search-category">
+								<button  id="searchContent" class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+								<span id="buttonName">Topics</span> <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu left" role="menu">
+
+										<li><a  id="searchForums" ><i class="glyphicon glyphicon-search"></i>Categories</a></li>
+
+
+										<li><a  id="searchMembers"><i class="glyphicon glyphicon-search"></i>Members</a></li>
+
+									<hr>
+									<li><a href="/search" id="advancedSearch"><i class="glyphicon glyphicon-cog"></i> <span>Advanced search</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+						<ul class="nav nav-pills pull-right">
+
+								<li class="pull-right">
+
+										<a href="/register/register">Register</a>
+
+								</li>
+
+							<li class="pull-right">
+								<a id='td_tab_login'   href="/register/login"  class="login_dialog"  >Log In</a>
+							</li>
+						</ul>
+
+
+			</div>
+			<div id="loading_msg" class="loading-top hidden">
+				<p>Loading...</p>
+			</div>
+			<div id="ajax-msg-top" class="ajax-msg-top hidden"><p></p></div>
+		</header>
+	</div>
+	<noscript>
+		<br/><div class="alert alert-danger text-center">Note: Your browser does not have JavaScript enabled. Many features may not work properly without it. Please enable JavaScript in your browser settings.</div>
+	</noscript>
+	<div id="slide-panel">
+
+
+<ul class="slide-panel-content">
+
+
+		<ul id="forums_toggle_link" class="panel-collapse collapse in">
+			<li><i data-toggle="collapse"  class="toggleable glyphicon icon-right-dir"> </i><a href="/categories">Categories</a>
+
+
+
+
+
+				<ul id="517854" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=517854">
+						News</a>
+
+					</li></ul>
+
+
+
+
+
+
+				<ul id="518028" class="panel-collapse collapse">
+					<li>
+						<i data-toggle="collapse" class="toggleable glyphicon icon-down-dir"> </i><a href="/?forum=518028">
+						Hardware</a>
+
+
+
+
+
+
+				<ul id="517874" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=517874">
+						Assembly</a>
+
+					</li></ul>
+
+
+
+
+				<ul id="517875" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=517875">
+						Calibration</a>
+
+					</li></ul>
+
+
+
+
+				<ul id="517876" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=517876">
+						Mods</a>
+
+					</li></ul>
+
+
+
+
+	</li>
+	</ul>
+
+
+
+
+
+				<ul id="518029" class="panel-collapse collapse">
+					<li>
+						<i data-toggle="collapse" class="toggleable glyphicon icon-down-dir"> </i><a href="/?forum=518029">
+						Software - Printer</a>
+
+
+
+
+
+
+				<ul id="518032" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=518032">
+						Marlin Firmware</a>
+
+					</li></ul>
+
+
+
+
+				<ul id="518033" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=518033">
+						Repetier Firmware</a>
+
+					</li></ul>
+
+
+
+
+	</li>
+	</ul>
+
+
+
+
+
+				<ul id="518030" class="panel-collapse collapse">
+					<li>
+						<i data-toggle="collapse" class="toggleable glyphicon icon-down-dir"> </i><a href="/?forum=518030">
+						Software - PC</a>
+
+
+
+
+
+
+				<ul id="517868" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=517868">
+						Slic3r</a>
+
+					</li></ul>
+
+
+
+
+				<ul id="517869" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=517869">
+						Cura</a>
+
+					</li></ul>
+
+
+
+
+				<ul id="517870" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=517870">
+						Simpify3d</a>
+
+					</li></ul>
+
+
+
+
+	</li>
+	</ul>
+
+
+
+
+
+				<ul id="518031" class="panel-collapse collapse">
+					<li>
+						<a href="/?forum=518031">
+						Showcase</a>
+
+					</li></ul>
+
+
+
+
+	</li>
+	</ul>
+
+
+	<li id="latest_topics_show"><a href="/latest"><small class="glyphicon glyphicon-pencil text-muted">&nbsp;</small> Topics</a></li>
+	<hr>
+	<li id="search_link" class="push"><a href="/search"><small class="glyphicon glyphicon-search text-muted">&nbsp;</small> Search</a></li>
+
+		<li id="members_list_show"><a href="/register/members"> <small class="glyphicon glyphicon-user text-muted">&nbsp;</small> Members</a></li>
+
+
+
+
+
+
+
+
+
+
+		<li><a target="_blank" href="http://tevoprinter.com"> <small class="glyphicon glyphicon-link text-muted">&nbsp;</small> The Community Forum</a></li></ul>
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+	<!--left side Add-->
+
+	<!--End left side Add-->
+    <div class="main-container">
+		<div class="header-image container" id="header_image"></div>
+
+
+
+
+
+				<div id="user_login" class="modal fade" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" >
+						<div class="modal-content" >
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">Log In</h4>
+							</div>
+							<form class="form-horizontal" method="post" role="form" action="/register/dologin" name="frmLogin">
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="inputEmail3" class="col-sm-4 control-label">Username or Email</label>
+										<div class="col-sm-6">
+											<input type="text" id="inputEmail3" name="member" value="" class="form-control" tabindex="1">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+										<div class="col-sm-6">
+											<input class="form-control" type="password" id="inputPassword3" name="pw" value="" tabindex="2">
+											<small><a href="/register/lost_pw" id="anchor_tab_forget_password">Forgot your password?</a></small>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-4 col-sm-6">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="remember" value="checked" id="rem" tabindex="3" >
+													<span class="text-muted">Keep me logged in</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<div class="pull-right">
+										<button type="submit" class="btn btn-primary" data-loading-text="Logging in...">Log In</button>
+
+											<span class="text-muted">&nbsp;or&nbsp;</span>
+											<a href="/register/register" >Create an account</a>
+
+									</div>
+
+
+								</div>
+								<input type="hidden" name="action" value="dologin">
+								<input type="hidden" name="jump" value="https://arcaded.discussion.community/latest?trail=25">
+                                				<input type="hidden" name="embedded" value="">
+							</form>
+						</div>
+					</div>
+				</div>
+
+
+		<!-- Private msg dialog -->
+
+
+
+		<div id="bootstrap-alert-box-modal" class="modal fade in layer-to-front">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Modal title</h4>
+			  </div>
+			  <div class="modal-body">
+				<p class="text-danger"></p>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+			  </div>
+			</div><!-- modal-content -->
+		  </div><!-- modal-dialog -->
+		</div><!-- modal -->
+		<!-- Content -->
+
+
+
+
+
+
+
+<div class="container content-panel forum-list all-topics-list">
+        <div role="tabpanel" class="tab-pane active" id="topics">
+			<a
+
+
+
+
+					href="/post/printadd"
+
+			 class="pull-right btn btn-uppercase btn-primary signupLogin"> Start New Topic</a>
+
+
+
+
+
+
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="/latest" aria-controls="topics" role="tab" data-toggle="tab">Topics</a></li>
+					<li role="presentation"><a href="/categories">Categories</a></li>
+				</ul>
+
+          <div class="tab-content">
+            <div role="tabpanel">
+              <div class="topics-list">
+				<form method="post" action="/mbactions" name="posts">
+                <div class="panel panel-default">
+					<div class="panel-menu">
+
+							<!-- Pagination links  -->
+
+
+
+
+
+
+	<div class="pull-left panel-pagination">
+		<ul class="pagination pagination-sm">
+
+
+
+					<li><a class="page-numbers text-muted open-popover" data-toggle="popover" data-placement="bottom">1 to 25 of 87</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<li><a href="/latest?&trail=50" class="btn-subtle" data-toggle="tooltip" data-placement="bottom" title="Next page">&rsaquo;</a></li>
+
+
+
+
+
+				<li><a href="/latest?&trail=100" class="btn-subtle" data-toggle="tooltip" title="Last page" data-placement="bottom"><i class="glyphicon glyphicon-step-forward"></i></a></li>
+
+
+		</ul>
+		<div class="page-numbers-content hide clearfix">
+			<div class="form-group">
+				<label> Go to page: </label>
+				<input type="hidden" name= "goto_page_link" id= "goto_page_link" value ="/latest?&trail=temp_trail"/>
+				<input type="hidden" name= "setting_per_page" id= "setting_per_page" value ="25"/>
+				<input id="page_number" type="number" class="form-control form-inline page_number" name="go_to_page" min="0" max="4">
+			</div>
+			<div class="form-group col-sm-12">
+				<button id ="goToPageNumber" type="button" class="btn btn-primary col-sm-12" tabindex="-1">Submit</button>
+			</div>
+		</div>
+	</div>
+
+<!-- End Pagination links  -->
+
+
+
+					</div>
+
+					<div class="panel-heading">
+
+						<ul>
+							<li class="active" ><a href="/latest">Latest</a></li>
+							<li class=""><a href="/new">New</a></li>
+
+							<!-- <li><a href="">Hot</a></li> -->
+
+
+
+
+							<li class=""><a href="/top?period=all">Top</a></li>
+							<li>
+
+						</li>
+					</ul>
+				 </div>
+
+				 <div class="panel-body table-responsive">
+					 <ul>
+
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/5465376"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8924757" href="/post/bidirectional-filament-runout-sensor-for-titan-extruder-8924757" class="topic-title"><span>Bi-directional Filament Runout Sensor for Titan extruder</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1502108637" is="time-ago" data-relative-date="true">1502108637</time> by
+				<a  href="/profile/5465376"  class='username usergroup947282' data-placement="bottom">TheAMM</a>
+					in <a href="/?forum=517876">Mods</a>:
+
+				-
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8924757" data-threadid="8924757" data-forum=""><i  class="icon glyphicon-comment-empty"></i>2</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1297886110" class="" data-thread-userid="5465376"><i class="glyphicon glyphicon-like-alt"></i><span>1</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/5465376"  class='username usergroup947282'>TheAMM</a>
+
+				<time datetime="1502108637" is="time-ago" data-relative-date="true">1502108637</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4894610"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8439792" href="/post/replacement-control-board-8439792" class="topic-title"><span>Replacement control board</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1489064636" is="time-ago" data-relative-date="true">1489064636</time> by
+				<a  href="/profile/4894610"  class='username usergroup947282' data-placement="bottom">asahi7</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				Hello, can you recommend a replacement control board for the tarantula, to have it as spare? i see too many variables on ebay, can't decide which one...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8439792" data-threadid="8439792" data-forum=""><i  class="icon glyphicon-comment-empty"></i>1</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1295044917" class="" data-thread-userid="4894610"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4894610"  class='username usergroup947282'>asahi7</a>
+
+				<time datetime="1489064636" is="time-ago" data-relative-date="true">1489064636</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/5470075"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8934288" href="/post/tevo-tarantula-3d-printer-broken-acrylic-corner-8934288" class="topic-title"><span>Tevo Tarantula 3D printer -Broken Acrylic corner</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1502689223" is="time-ago" data-relative-date="true">1502689223</time> by
+				<a  href="/profile/5470075"  class='username usergroup947282' data-placement="bottom">AnthonyPython</a>
+					in <a href="/?forum=517874">Assembly</a>:
+
+				Hello, I'm new here and I've received my first 3D Printer, Tevo Tarantula. I was putting together the final pieces of the frame/ Carriage...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8934288" data-threadid="8934288" data-forum=""><i  class="icon glyphicon-comment-empty"></i>1</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1297947731" class="" data-thread-userid="5470075"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/5470075"  class='username usergroup947282'>AnthonyPython</a>
+
+				<time datetime="1502689223" is="time-ago" data-relative-date="true">1502689223</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/5556196"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_9278276" href="/post/unknown-part-9278276" class="topic-title"><span>Unknown part</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1503850111" is="time-ago" data-relative-date="true">1503850111</time> by
+				<a  href="/profile/5556196"  class='username usergroup947282' data-placement="bottom">t845526</a>
+					in <a href="/?forum=517874">Assembly</a>:
+
+				Hi everybody,   I just assembled      my first 3d printer and it is working fine. Since the manual is not very detailed i have 1 wire left. Does...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_9278276" data-threadid="9278276" data-forum=""><i  class="icon glyphicon-comment-empty"></i>3</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1299934642" class="" data-thread-userid="5556196"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/5556196"  class='username usergroup947282'>t845526</a>
+
+				<time datetime="1503850111" is="time-ago" data-relative-date="true">1503850111</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4526681"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8171641" href="/post/server-power-supply-mod-8171641" class="topic-title"><span>Server Power Supply Mod</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1468140076" is="time-ago" data-relative-date="true">1468140076</time> by
+				<a  href="/profile/4526681"  class='username usergroup947282' data-placement="bottom">Chiumanfu</a>
+					in <a href="/?forum=517876">Mods</a>:
+
+				It is no secret that the stock power supply included with the Tarantula is barely adequate. It is operating at the edge of it's capacity and has an...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8171641" data-threadid="8171641" data-forum=""><i  class="icon glyphicon-comment-empty"></i>20</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1292788351" class="" data-thread-userid="4526681"><i class="glyphicon glyphicon-like-alt"></i><span>2</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4526681"  class='username usergroup947282'>Chiumanfu</a>
+
+				<time datetime="1468140076" is="time-ago" data-relative-date="true">1468140076</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/5101647"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8723034" href="/post/printing-using-simplify3d-8723034" class="topic-title"><span>Printing using Simplify3d</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1501054631" is="time-ago" data-relative-date="true">1501054631</time> by
+				<a  href="/profile/5101647"  class='username usergroup947282' data-placement="bottom">itay</a>
+					in <a href="/?forum=517870">Simpify3d</a>:
+
+				Hello,  I am trying to print using Simplify3d on a Tevo Tarantula dual extruder. My problem is that the first layer is printing correctly and when it...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8723034" data-threadid="8723034" data-forum=""><i  class="icon glyphicon-comment-empty"></i>0</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1297123114" class="" data-thread-userid="5101647"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/5101647"  class='username usergroup947282'>itay</a>
+
+				<time datetime="1501054631" is="time-ago" data-relative-date="true">1501054631</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/5022840"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8633763" href="/post/is-my-sn04n-defective-8633763" class="topic-title"><span>Is my SN04-N defective?</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1499756050" is="time-ago" data-relative-date="true">1499756050</time> by
+				<a  href="/profile/5022840"  class='username usergroup947282' data-placement="bottom">Mandor</a>
+					in <a href="/?forum=517875">Calibration</a>:
+
+				Hello. My first 3d printer arrived. Just assembled Tevo Tarantula and I manually leveled the bed and was trying to get the proximity sensor working....
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8633763" data-threadid="8633763" data-forum=""><i  class="icon glyphicon-comment-empty"></i>0</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1296784574" class="" data-thread-userid="5022840"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/5022840"  class='username usergroup947282'>Mandor</a>
+
+				<time datetime="1499756050" is="time-ago" data-relative-date="true">1499756050</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/5020210"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8628062" href="/post/dual-head-auto-level-sensor-mount-problems-8628062" class="topic-title"><span>dual head auto level sensor mount problems</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1499438806" is="time-ago" data-relative-date="true">1499438806</time> by
+				<a  href="/profile/5020210"  class='username usergroup947282' data-placement="bottom">rusty620</a>
+					in <a href="/?forum=517874">Assembly</a>:
+
+				I have just finished building a dual head tarantula with auto bed level. the hot end heatsink has mounting holes on it reverse for the sensor, all...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8628062" data-threadid="8628062" data-forum=""><i  class="icon glyphicon-comment-empty"></i>0</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1296751026" class="" data-thread-userid="5020210"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/5020210"  class='username usergroup947282'>rusty620</a>
+
+				<time datetime="1499438806" is="time-ago" data-relative-date="true">1499438806</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4536075"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8181493" href="/post/how-to-set-final-z-level-with-autolevel-sn04n-8181493" class="topic-title"><span>How to set final z level with autolevel sn04-n?</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1468913883" is="time-ago" data-relative-date="true">1468913883</time> by
+				<a  href="/profile/4536075"  class='username usergroup947282' data-placement="bottom">NAJOTARANTULA</a>
+					in <a href="/?forum=517875">Calibration</a>:
+
+				hi, I desperately looking for the solution !! how to adjust the height of the nozzle with autolevel? when I run a print nozzle touches the plate, I...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8181493" data-threadid="8181493" data-forum=""><i  class="icon glyphicon-comment-empty"></i>13</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1292867315" class="" data-thread-userid="4536075"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4536075"  class='username usergroup947282'>NAJOTARANTULA</a>
+
+				<time datetime="1468913883" is="time-ago" data-relative-date="true">1468913883</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4574982"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8166530" href="/post/help-problem-with-yaxis-making-brrr-sounds-after-turning-printer-on-and-at-random-intervals-8166530" class="topic-title"><span>Help: Problem with Y-axis making "brrr" sounds after turning printer on and at random intervals.</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1467723995" is="time-ago" data-relative-date="true">1467723995</time> by
+				<a  href="/profile/4574982"  class='username usergroup947282' data-placement="bottom">vins</a>
+					in <a href="/?forum=517874">Assembly</a>:
+
+				Hello. Recently I assembled my first Tevo Tarantula. Used Ed's youtube guide (https://youtu.be/kjc8OBsKi0U?list=PL7OGtDmFA6R6nBhSznM8lyO57RcmNu6Vk)...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8166530" data-threadid="8166530" data-forum=""><i  class="icon glyphicon-comment-empty"></i>6</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1292746311" class="" data-thread-userid="4574982"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4574982"  class='username usergroup947282'>vins</a>
+
+				<time datetime="1467723995" is="time-ago" data-relative-date="true">1467723995</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4948568"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8501333" href="/post/auto-level-issue-8501333" class="topic-title"><span>Auto level issue</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1494200066" is="time-ago" data-relative-date="true">1494200066</time> by
+				<a  href="/profile/4948568"  class='username usergroup947282' data-placement="bottom">amostol</a>
+					in <a href="/?forum=518032">Marlin Firmware</a>:
+
+				Hi I just build a large 3d printer http://www.thingiverse.com/thing:2078327. but I have a issue with the auto-level. I'm using Marlin firmware and a...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8501333" data-threadid="8501333" data-forum=""><i  class="icon glyphicon-comment-empty"></i>1</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1295617438" class="" data-thread-userid="4948568"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4948568"  class='username usergroup947282'>amostol</a>
+
+				<time datetime="1494200066" is="time-ago" data-relative-date="true">1494200066</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/5012225"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8579092" href="/post/move-z-axis-wont-go-less-than-0-00-8579092" class="topic-title"><span>Move z axis wont go less than +0.00</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1498602853" is="time-ago" data-relative-date="true">1498602853</time> by
+				<a  href="/profile/5012225"  class='username usergroup947282' data-placement="bottom">Khalifa SLM</a>
+					in <a href="/?forum=518029">Software - Printer</a>:
+
+				Hello everyone,   I recently bought a Tevo BW with a BLT. After completing the assembly and the setup (BLT calibration) that was in the latest...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8579092" data-threadid="8579092" data-forum=""><i  class="icon glyphicon-comment-empty"></i>1</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1296365791" class="" data-thread-userid="5012225"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/5012225"  class='username usergroup947282'>Khalifa SLM</a>
+
+				<time datetime="1498602853" is="time-ago" data-relative-date="true">1498602853</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4991599"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8563790" href="/post/nozzle-over-heat-without-printing-8563790" class="topic-title"><span>Nozzle Over Heat ( Without Printing)</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1497401555" is="time-ago" data-relative-date="true">1497401555</time> by
+				<a  href="/profile/4991599"  class='username usergroup947282' data-placement="bottom">Loon</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				Hello  I have Tevo Tarantula Large bed (200*280)
+
+I tried the manual leveling for the bed, then I've convert it to auto leveling (following...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8563790" data-threadid="8563790" data-forum=""><i  class="icon glyphicon-comment-empty"></i>3</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1296250984" class="" data-thread-userid="4991599"><i class="glyphicon glyphicon-like-alt"></i><span>1</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4991599"  class='username usergroup947282'>Loon</a>
+
+				<time datetime="1497401555" is="time-ago" data-relative-date="true">1497401555</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4994444"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8567528" href="/post/nozzle-overheating-issue-8567528" class="topic-title"><span>Nozzle Overheating Issue</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1497758685" is="time-ago" data-relative-date="true">1497758685</time> by
+				<a  href="/profile/4994444"  class='username usergroup947282' data-placement="bottom">FoxyPants</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				Someone else has had this issue aswell. But I manually leveled the bed and went to do a test print to see if it needs any more adjustments. Only to...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8567528" data-threadid="8567528" data-forum=""><i  class="icon glyphicon-comment-empty"></i>1</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1296283548" class="" data-thread-userid="4994444"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4994444"  class='username usergroup947282'>FoxyPants</a>
+
+				<time datetime="1497758685" is="time-ago" data-relative-date="true">1497758685</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4990033"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8561604" href="/post/tell-what-to-make-for-obtaining-the-necessary-temperature-8561604" class="topic-title"><span>Tell what to make for obtaining the necessary temperature?</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1497214008" is="time-ago" data-relative-date="true">1497214008</time> by
+				<a  href="/profile/4990033"  class='username usergroup947282' data-placement="bottom">Roman M</a>
+					in <a href="/?forum=517875">Calibration</a>:
+
+				Hello!
+Give please advice how to calibrate PID Hotend for the TEVO Black Widow Firmware Marlin 1.1.0 RC7 printer.
+The plant established PID
+Kp...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8561604" data-threadid="8561604" data-forum=""><i  class="icon glyphicon-comment-empty"></i>0</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1296232618" class="" data-thread-userid="4990033"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4990033"  class='username usergroup947282'>Roman M</a>
+
+				<time datetime="1497214008" is="time-ago" data-relative-date="true">1497214008</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4990033"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8561601" href="/post/tell-what-to-make-for-obtaining-the-necessary-temperature-8561601" class="topic-title"><span>Tell what to make for obtaining the necessary temperature?</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1497213898" is="time-ago" data-relative-date="true">1497213898</time> by
+				<a  href="/profile/4990033"  class='username usergroup947282' data-placement="bottom">Roman M</a>
+					in <a href="/?forum=517875">Calibration</a>:
+
+				Hello!
+Give please advice how to calibrate PID Hotend for the TEVO Black Widow Firmware Marlin 1.1.0 RC7 printer.
+The plant established PID
+Kp...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8561601" data-threadid="8561601" data-forum=""><i  class="icon glyphicon-comment-empty"></i>0</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1296232602" class="" data-thread-userid="4990033"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4990033"  class='username usergroup947282'>Roman M</a>
+
+				<time datetime="1497213898" is="time-ago" data-relative-date="true">1497213898</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4942893"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8492649" href="/post/help-how-do-you-change-the-filament-in-the-tevo-tarantula-8492649" class="topic-title"><span>Help! How do you change the filament in the Tevo Tarantula?</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1493436925" is="time-ago" data-relative-date="true">1493436925</time> by
+				<a  href="/profile/4942893"  class='username usergroup947282' data-placement="bottom">Tellnaman</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				I wasn't able to find any information on this anywhere on the internet so I am drawing a blank here. Would be great if someone explained how to...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8492649" data-threadid="8492649" data-forum=""><i  class="icon glyphicon-comment-empty"></i>2</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1295539437" class="" data-thread-userid="4942893"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4942893"  class='username usergroup947282'>Tellnaman</a>
+
+				<time datetime="1493436925" is="time-ago" data-relative-date="true">1493436925</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4884855"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8433534" href="/post/i-want-to-buy-a-tarantula-3-d-printer-but-im-afraid-to-be-scamed-8433534" class="topic-title"><span>I WANT TO BUY A TARANTULA 3 D PRINTER , BUT IM AFRAID TO BE SCAMED BY ALI EXPRESS</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1488590572" is="time-ago" data-relative-date="true">1488590572</time> by
+				<a  href="/profile/4884855"  class='username usergroup947282' data-placement="bottom">sergio casagrande</a>
+					in <a href="/?forum=518031">Showcase</a>:
+
+				HI FRIENDS , I WANT TO BUY A TEVO TARANTULA 3D PRINTER , BUT IM AFRAID TO BE SCAMED BY ALI EXPRESS , I'VE NEVER BOUGHT ANITHING FROM THIS WEB SITE...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8433534" data-threadid="8433534" data-forum=""><i  class="icon glyphicon-comment-empty"></i>7</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1294993252" class="" data-thread-userid="4884855"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4884855"  class='username usergroup947282'>sergio casagrande</a>
+
+				<time datetime="1488590572" is="time-ago" data-relative-date="true">1488590572</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4962251"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8519580" href="/post/printing-metal-8519580" class="topic-title"><span>Printing metal</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1495749944" is="time-ago" data-relative-date="true">1495749944</time> by
+				<a  href="/profile/4962251"  class='username usergroup947282' data-placement="bottom">Jhon</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				Good afternoon printers, I am a newbie in this world looking for a 3d printer, I had already played around a makerbot replicator, but it is way too...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8519580" data-threadid="8519580" data-forum=""><i  class="icon glyphicon-comment-empty"></i>0</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1295782237" class="" data-thread-userid="4962251"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4962251"  class='username usergroup947282'>Jhon</a>
+
+				<time datetime="1495749944" is="time-ago" data-relative-date="true">1495749944</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4958875"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8513930" href="/post/new-tevo-tarantula-limit-stops-not-working-8513930" class="topic-title"><span>New Tevo Tarantula Limit Stops not working</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1495320817" is="time-ago" data-relative-date="true">1495320817</time> by
+				<a  href="/profile/4958875"  class='username usergroup947282' data-placement="bottom">dynodc</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				Hello, I'm new to this whole 3D print community and I did a ton of research and purchased the Tarantula. I got everything built, connected and double...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8513930" data-threadid="8513930" data-forum=""><i  class="icon glyphicon-comment-empty"></i>1</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1295734198" class="" data-thread-userid="4958875"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4958875"  class='username usergroup947282'>dynodc</a>
+
+				<time datetime="1495320817" is="time-ago" data-relative-date="true">1495320817</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4953826"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8507426" href="/post/pla-stuck-on-the-bed-8507426" class="topic-title"><span>PLA stuck on the bed</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1494765739" is="time-ago" data-relative-date="true">1494765739</time> by
+				<a  href="/profile/4953826"  class='username usergroup947282' data-placement="bottom">mcmurphy</a>
+					in <a href="/?forum=517874">Assembly</a>:
+
+				Hello, yesterday I finished my tarantula with the big bed, doing some probes there is some plastic that i can´t get away from the bed. How can i get...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8507426" data-threadid="8507426" data-forum=""><i  class="icon glyphicon-comment-empty"></i>0</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1295675156" class="" data-thread-userid="4953826"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4953826"  class='username usergroup947282'>mcmurphy</a>
+
+				<time datetime="1494765739" is="time-ago" data-relative-date="true">1494765739</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4952116"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8506058" href="/post/where-i-can-buy-a-hotend-for-the-tevo-tarantula-i3-8506058" class="topic-title"><span>Where I can buy a Hot-End for the Tevo Tarantula I3?</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1494602071" is="time-ago" data-relative-date="true">1494602071</time> by
+				<a  href="/profile/4952116"  class='username usergroup947282' data-placement="bottom">HDaniel999</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				The thing is that I had a clogging issue with my 3D printer, I find it was because a gap between the nozzle and the tube where the filament goes, the...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8506058" data-threadid="8506058" data-forum=""><i  class="icon glyphicon-comment-empty"></i>0</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1295660584" class="" data-thread-userid="4952116"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4952116"  class='username usergroup947282'>HDaniel999</a>
+
+				<time datetime="1494602071" is="time-ago" data-relative-date="true">1494602071</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4765907"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8381302" href="/post/leakage-over-nozzle-hot-end-at-teo-tarantula-8381302" class="topic-title"><span>LEAKAGE OVER NOZZLE (HOT END) AT TEO TARANTULA</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1484463279" is="time-ago" data-relative-date="true">1484463279</time> by
+				<a  href="/profile/4765907"  class='username usergroup947282' data-placement="bottom">bg</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				 Hello,    I have new Tevo Tarantula.    There is PLA/ABS (both of them) leakage over and under hot end. (please see attached  photo)            How...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8381302" data-threadid="8381302" data-forum=""><i  class="icon glyphicon-comment-empty"></i>3</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1294520659" class="" data-thread-userid="4765907"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4765907"  class='username usergroup947282'>bg</a>
+
+				<time datetime="1484463279" is="time-ago" data-relative-date="true">1484463279</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+			<a style="background-image:url(https://s3.amazonaws.com/files.websitetoolbox.com/200855/3339691)" class="username"  href="/profile/4947161"></a>
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8499419" href="/post/heated-bed-not-actually-heating-up-8499419" class="topic-title"><span>Heated bed not actually heating up.</span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1494008168" is="time-ago" data-relative-date="true">1494008168</time> by
+				<a  href="/profile/4947161"  class='username usergroup947282' data-placement="bottom">Faemantis</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				Me and my dad are having issues with the heatbed not heating up. We give it a set temperature (like let's say 80 celsius). The display shows the...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8499419" data-threadid="8499419" data-forum=""><i  class="icon glyphicon-comment-empty"></i>1</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1295600588" class="" data-thread-userid="4947161"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4947161"  class='username usergroup947282'>Faemantis</a>
+
+				<time datetime="1494008168" is="time-ago" data-relative-date="true">1494008168</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+	<li class="
+
+
+		read
+
+
+ pinned col-xs-12">
+	  <span  class="col-md-9">
+
+
+
+
+
+			  <span  class="image-wrapper mini">
+
+<!-- Print Avatar image or link for profile page and pm and post pages -->
+
+
+
+
+
+
+				<a class="default-user username" href="/profile/4834684"></a>
+
+
+
+
+<!-- End of Print Avatar image -->
+
+			  </span>
+
+		<span class="topic-content">
+			<h4>
+
+
+				<a id="topic_8396102" href="/post/tevo-tarantula-large-heated-bed-power-draining-issue-auto-leveling-sensor-mount-on-a-dual-8396102" class="topic-title"><span>Tevo Tarantula - LARGE Heated bed power draining issue, AUTO LEVELING sensor mount on a DUAL EXTRUDER version issue. </span></a>
+
+
+
+
+
+			</h4>
+			<p class="text-muted preview-text">
+				<time datetime="1485715987" is="time-ago" data-relative-date="true">1485715987</time> by
+				<a  href="/profile/4834684"  class='username usergroup947282' data-placement="bottom">Sir.Anri</a>
+					in <a href="/?forum=518028">Hardware</a>:
+
+				Good day,  recently i have ordered a  2016 Newest TEVO Tarantula I3 Aluminium Extrusion 3D Printer kit  with a  LARGE BED ,  DUAL EXTRUDERS , and ...
+
+
+			</p>
+		</span>
+	  </span>
+	  <span class="col-md-3 pull-right">
+		<span class="mod icons pull-right">
+
+			<a data-toggle="modal" data-backdrop="true" data-keyboard="true" href="#posted-modal"><span data-original-title="Posts" data-toggle="tooltip" title="" id="reply_count_8396102" data-threadid="8396102" data-forum=""><i  class="icon glyphicon-comment-empty"></i>4</span></a>
+
+				<a  href="#form-dialog" data-toggle="modal"  title="Like this topic" id="first_post_vote_1294663583" class="" data-thread-userid="4834684"><i class="glyphicon glyphicon-like-alt"></i><span>0</span></a>
+
+
+
+
+
+
+		</span>
+		<span class="last-post pull-right">
+		  <i class="text-muted pull-left">
+			<p class="text-muted">Started by
+
+
+					<a  href="/profile/4834684"  class='username usergroup947282'>Sir.Anri</a>
+
+				<time datetime="1485715987" is="time-ago" data-relative-date="true">1485715987</time>
+			</p>
+		  </i>
+		</span>
+	  </span>
+	</li>
+
+
+
+					</ul>
+				</div>
+				<div class="panel-menu">
+
+						<!-- Pagination links  -->
+
+
+
+
+
+
+	<div class="pull-left panel-pagination">
+		<ul class="pagination pagination-sm">
+
+
+
+					<li><a class="page-numbers text-muted open-popover" data-toggle="popover" data-placement="bottom">1 to 25 of 87</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<li><a href="/latest?&trail=50" class="btn-subtle" data-toggle="tooltip" data-placement="bottom" title="Next page">&rsaquo;</a></li>
+
+
+
+
+
+				<li><a href="/latest?&trail=100" class="btn-subtle" data-toggle="tooltip" title="Last page" data-placement="bottom"><i class="glyphicon glyphicon-step-forward"></i></a></li>
+
+
+		</ul>
+		<div class="page-numbers-content hide clearfix">
+			<div class="form-group">
+				<label> Go to page: </label>
+				<input type="hidden" name= "goto_page_link" id= "goto_page_link" value ="/latest?&trail=temp_trail"/>
+				<input type="hidden" name= "setting_per_page" id= "setting_per_page" value ="25"/>
+				<input id="page_number" type="number" class="form-control form-inline page_number" name="go_to_page" min="0" max="4">
+			</div>
+			<div class="form-group col-sm-12">
+				<button id ="goToPageNumber" type="button" class="btn btn-primary col-sm-12" tabindex="-1">Submit</button>
+			</div>
+		</div>
+	</div>
+
+<!-- End Pagination links  -->
+
+
+				 </div>
+                </div>
+
+				<input type="hidden" name="showAllForumsTopics" value="1"/ id="showAllForumsTopics">
+				<input type="hidden" name="jump" value="https://arcaded.discussion.community/latest?trail=25">
+				<input type="hidden" name="lastvisit" value="">
+				<input type="hidden" name="action" id="action" value="" >
+				<input type="hidden" name="setting_per_page" id="setting_per_page" value="25">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+		<div id="who_posted_dialog" class="modal fade" tabindex="0" role="dialog" aria-labelledby="modal-label" aria-hidden="true"></div>
+
+
+
+	<!-- LOGIN DIALOG -->
+<div class="modal fade" id="form-dialog" tabindex="0" role="dialog" aria-hidden="true">
+	<div class="modal-dialog"   id="login_register_modal" >
+		<div class="modal-content">
+			<div class="modal-header">
+			<button type="button" class="close" id="bootstrap_close_register_dialog">&times;</button>
+			<h4 class="modal-title" id="myModalLabel">You need to be logged in to send an email.</h4>
+			</div>
+			<div class="modal-body">
+
+					<form method="post" action="/register/create_account" name="PostTopics" class="form-horizontal" role="form">
+						<div class="form-group">
+							<span class="text-block">Create Account</span>
+							<div class="col-sm-12">
+								<input type="text" id="registerModalCreateAccount" class="form-control" placeholder="Username" name="member" value="" maxlength="25" autofocus>
+							</div>
+							<div class="col-sm-12 cleared">
+								<input type="password" class="form-control" placeholder="Password" name="pw" value="">
+							</div>
+							<div class="col-sm-12 cleared">
+								<input type="text	" class="form-control" placeholder="Email Address" name="email" value="" maxlength="50">
+							</div>
+							<div id="rules_box" class="modal fade" tabindex="0" role="dialog" aria-hidden="true">
+								<div class="modal-dialog" >
+									<div class="modal-content"  >
+										<div class="modal-header">
+											<button type="button" class="close" id="bootstrap_close_rules_terms_dialog">&times;</button>
+											<h4 class="modal-title" >Forum Terms &amp; Rules</h4>
+										</div>
+										<div class="modal-body">
+											<p>Please remember that we are not responsible for any message posted. We do not vouch for or warrant the accuracy, completeness or usefulness of any message, and are not responsible for the contents of any message. The messages express the views of the author of the message, not necessarily the views of this forum. Any user who feels that a posted message is objectionable is encouraged to contact us immediately by email. We have the ability to remove objectionable messages and we will make every effort to do so, within a reasonable time frame, if we determine that removal is necessary.</p><p>You agree, through your use of this service, that you will not use this forum to post any material which is knowingly false and/or defamatory, inaccurate, abusive, vulgar, hateful, harassing, obscene, profane, sexually oriented, threatening, invasive of a person�s privacy, or otherwise volatile of any law. You agree not to post any copyrighted material unless the copyright is owned by you or by this forum.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="hdx"><textarea name="comments_0" cols="35" rows="5"></textarea></div>
+							<button type="submit" class="btn btn-primary cleared">Create Account</button>
+						</div>
+						<input type="hidden" name="action" value="create_account">
+						<input type="hidden" name="cist" value="" id="cist">
+						<input type="hidden" name="quick_register" value="1">
+					</form>
+
+				<form method="post" action="/register" name="frmLogin" class="form-horizontal" role="form">
+					<div class="form-group">
+					  <span id="user-login-modal-heading" class="text-block">Log In</span>
+					  <div class="col-sm-12">
+						<input type="text" id="registerModalUserName" class="form-control" placeholder="Username or Email" name="member" value="">
+					  </div>
+					  <div class="col-sm-12 cleared">
+						<input type="password" class="form-control" id="registerModalPassword" placeholder="Password" name="pw" value="">
+						<div class="pull-right">
+						  <small><a href="/register/lost_pw" id="anchor_tab_forget_password" class="text-right">Forgot your password?</a></small>
+						</div>
+					  </div>
+					  <div class="col-sm-8 cleared">
+						<label>
+						  <input type="checkbox"  name="remember" value="checked">&nbsp; <span class="text-muted">Keep me logged in</span>
+						</label>
+					  </div>
+					  <div class="cleared"></div>
+					  <button type="submit" class="btn btn-primary cleared" data-loading-text="Logging in...">Log In</button>
+					  <input type="hidden" name="action" value="dologin">
+					  <input type="hidden" name="jump" value="https://arcaded.discussion.community/latest?trail=25">
+                      			  <input type="hidden" name="embedded" value="">
+					</div>
+				</form>
+
+
+
+					<p class="no-space"><small class="text-muted">By creating an account, you agree to our <a id="rules_dialog" href="/register?action=forumrules" target="_blank">Terms &amp; Rules.</a></small></p>
+
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	if (typeof wtbx === 'undefined') var wtbx = {};
+	wtbx.newUserRegistrationSetting  ='checked';
+</script>
+
+
+
+	<div class="modal fade" id="email-modal" tabindex="0" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="email_member">Email </h4>
+			</div>
+			<div class="modal-body">
+
+				<div class="alert alert-danger text-center" id="email_error_msg" role="alert">
+				</div>
+
+				<form class="form-horizontal" role="form" id="PostEmail" method="post" action="/email" name="PostEmail">
+
+
+
+
+					<div class="form-group">
+						<label for="message-subj" class="col-sm-3 control-label">
+							Subject
+						</label>
+						<div class="col-sm-7">
+							<input type="text" name="subject" id="email_subject" value="" class="form-control" placeholder="Email Subject">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="message-body" class="col-sm-3 control-label">
+							Message
+						</label>
+						<div class="hdx"><textarea name="comments_0" id="sendemail_comments_0" cols="55" rows="15"></textarea></div>
+						<div class="col-sm-7">
+							<textarea class="form-control" contentEditable="true" id="email_message" name="message"></textarea>
+							<small class="text-muted">
+								By using this form, your email address will become available to the user who you are emailing.
+							</small>
+						</div>
+					</div>
+
+
+						<input type="hidden" name="id" id="email_threadid" value="">
+						<input type="hidden" name="forumid" id="forumids_id" value="">
+						<input type="hidden" name="pid" id="email_pid" value="F">
+						<input type="hidden" name="referral" id="referralURL" value="">
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<div class="pull-right">
+					<button type="submit" id="send_email_button" class="btn btn-primary" data-loading-text="Logging in..." >Send</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+		<div class="hidden" id="popover_content">
+			<div class="popover hovercard" role="tooltip">
+				<div class="arrow"></div>
+				<h3 class="popover-title"></h3>
+				<div class="popover-content">
+				</div>
+			</div>
+		</div>
+
+		<p class="ghost">Add a <a href="https://www.websitetoolbox.com/">Website Forum</a> to your website.</p>
+
+
+		<script src="/spellcheck/spellChecker.js" defer></script>
+
+	<script type="text/javascript">
+			var smilie_user = 'arcaded';
+	</script>
+	<!-- Emoticons Modal -->
+	<div class="modal fade" id="smilie_popup" tabindex="0" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" id="bootstrap_close_emoticons_modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="online-modal-label">Emoticons</h4>
+				</div>
+				<div class="modal-body">
+					<div id="smilie_inner_content"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Emoticons Modal -->
+
+	<!-- Insert Video Modal -->
+	<div class="modal fade" id="video_popup" tabindex="0" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" id="bootstrap_close_insert_url_modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="online-modal-label">Insert Video</h4>
+				</div>
+				<div class="modal-body">
+					<div id="video_inner_content">
+						<label for="enter_video" class="control-label">Enter your video clip URL below:</label>
+						<div class="form-group">
+							<input id="dialog_input_value" class="form-control" size=51 type="text" value="http://" >
+						</div>
+						<div class="form-group">
+							<span class="text-muted">Example: <a target="_blank" href="http://www.youtube.com" >http://www.youtube.com/watch?v=1234567</a></span>
+						</div>
+						<div id="video_list" class="form-group">
+							<p><b>Supported videos include:</b></p>
+							<a target="_blank" href="http://www.youtube.com">YouTube,</a>&nbsp;
+							<a target="_blank" href="http://www.vimeo.com">Vimeo,</a>&nbsp;
+							<a target="_blank" href="http://www.dailymotion.com">Dailymotion,</a>&nbsp;
+							<a target="_blank" href="http://www.metacafe.com">Metacafe,</a>&nbsp;
+							<a target="_blank" href="http://www.facebook.com">Facebook</a>&nbsp;
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="pull-right">
+						<a  id="insert_video_url" class="btn btn-primary">Insert URL</a>
+						<button class="btn btn-subtle bd-wrapper" id="bootstrap_close_insert_url" >Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Insert Video Modal -->
+	<div id="code_popup" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" id="bootstrap_close_insert_code_modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title"
+					id="online-modal-label">Insert Code</h4>
+				</div>
+				<!-- dialog body -->
+				<div class="modal-body">
+					<p>Please paste your code into the box below:</p>
+					<div class="form-group">
+						<textarea id="dialog_input_code_value" rows="4" cols="50" class="form-control"></textarea>
+					</div>
+				</div>
+				<!-- dialog buttons -->
+				<div class="modal-footer">
+						<button type="button" id='code_button_tce' class="btn btn-primary">OK</button>
+					<button type="button" class="btn btn-subtle" id="bootstrap_close_insert_code" >Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Source Code Modal -->
+	<div id="source_code_popup" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" id="bootstrap_close_source_code_modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="online-modal-label">Source Code</h4>
+				</div>
+				<!-- dialog body -->
+				<div class="modal-body">
+					<div class="form-group">
+						<textarea id="source_code" rows="18" cols="50" class="form-control"></textarea>
+					</div>
+				</div>
+				<!-- dialog buttons -->
+				<div class="modal-footer">
+					<button type="button" id="update_source_code" class="btn btn-primary">OK</button>
+					<button type="button" class="btn btn-subtle" id="bootstrap_close_source_code" >Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	</div><!-- Close .main-container from header.tpl -->
+
+	<div id="hover_card_content"></div>
+
+	    <script type="text/javascript">
+		    var vglnk = { api_url: '//api.viglink.com/api',
+			    key: 'ccc2217bc2b75c4bdf5f7e57267f0464' };
+
+		    (function(d, t) {
+			    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+			    s.src = ('https:' == document.location.protocol ? vglnk.api_url :
+			    '//cdn.viglink.com/api') + '/vglnk.js';
+			    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+		    }(document, 'script'));
+	    </script>
+
+
+
+
+
+
+
+
+	</div>
+
+
+	<!--Below elemt used to set iframe height for down-sizing-->
+	<div data-iframe-height style="position: fixed"></div>
+  </body>
 </html>
+<!-- end page -->
