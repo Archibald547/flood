@@ -6,3 +6,5 @@ def home(request):
 
 def rego(request):
     return render(request,'home/register.html')
+
+
