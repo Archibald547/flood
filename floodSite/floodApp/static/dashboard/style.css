@@ -1,0 +1,27 @@
+body {
+    margin:0px;
+}
+
+#wallpaper {
+    position:fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left 0;
+}
+
+.nav {
+    position:absolute;
+    top:0px;
+    left:0px
+}
+
+.nav-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}

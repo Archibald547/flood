@@ -7,4 +7,6 @@ def home(request):
 def rego(request):
     return render(request,'home/template/register.html')
 
+def dashboard(request):
+    return render(request,'dashboard/template/dashboard.html')
 
