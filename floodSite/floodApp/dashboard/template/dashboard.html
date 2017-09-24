@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="../../static/dashboard/reset.css" rel="stylesheet">
     <link href="../../static/dashboard/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body style="margin:0px">
     <div id="wallpaper" style="position:fixed; height: 100%; width: 100%; top:0;left 0;">
@@ -12,14 +12,28 @@
     </div>
     <div class="nav" style="position:absolute; top:30px; right:40px">
       <ul class="nav-bar" style="list-style-type: none;">
-        <li style="display:inline; padding: 10px"><a href="{% url 'dashboard' %}">Home</a></li>
-        <li style="display:inline; padding: 10px"><a href="#">Profile</a></li>
-        <li style="display:inline; padding: 10px"><a href="#">Sign Out</a></li>
+        <li style="display:inline; padding: 5px; font-size:15px"><a href="{% url 'dashboard' %}">Home</a></li>
+        <li style="display:inline; padding: 5px; font-size:15px"><a href="#">Profile</a></li>
+        <li style="display:inline; padding: 5px; font-size:15px"><a href="#">Sign Out</a></li>
       </ul>
     </div>
     <div id="toolbar" style="position:absolute; bottom:40px; left:30px">
-      <a href="#" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-calendar"></span> Calendar
+      <a href="#">
+        <span class="glyphicon glyphicon-time" style="font-size:40px; padding:10px; color:white"></span>
+      </a>
+      <a href="#">
+        <span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white"></span>
+      </a>
+      <a href="#">
+        <span class="glyphicon glyphicon-envelope" style="font-size:40px; padding:10px; color:white"></span>
+      </a>
+      <a href="#">
+        <span class="glyphicon glyphicon-stats" style="font-size:40px; padding:10px; color:white"></span>
+      </a>
+    </div>
+    <div id="todo-taskbar" style="position:absolute; bottom:40px; right:30px">
+      <a href="#">
+        <span class="glyphicon glyphicon-list" style="font-size:40px; padding:10px; color:white"></span>
       </a>
     </div>
 </body>
