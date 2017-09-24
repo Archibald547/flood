@@ -2,9 +2,9 @@ from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 def home(request):
-    return render(request, 'home/main.html')
+    return render(request, 'home/template/main.html')
 
 def rego(request):
-    return render(request,'home/register.html')
+    return render(request,'home/template/register.html')
 
 
