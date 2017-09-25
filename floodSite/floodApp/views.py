@@ -10,3 +10,6 @@ def rego(request):
 def dashboard(request):
     return render(request,'dashboard/template/dashboard.html')
 
+def profile(request):
+    return render(request,'dashboard/template/profile.html')
+
