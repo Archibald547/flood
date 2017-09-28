@@ -54,6 +54,12 @@ ROOT_URLCONF = 'floodSite.urls'
 
 TEMPLATES = [
     {
+      'BACKEND':'django.template.backends.jinja2.Jinja2',
+      'DIRS': ['floodApp/template/jinja2'],
+      'APP_DIRS': True,
+      'OPTIONS': {'environment':'floodSite.jinja2.environment'}
+    },
+    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['floodApp/'],
         'APP_DIRS': True,
