@@ -53,15 +53,15 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'floodSite.urls'
 
 TEMPLATES = [
-    {
-      'BACKEND':'django.template.backends.jinja2.Jinja2',
-      'DIRS': ['floodApp/template/jinja2'],
-      'APP_DIRS': True,
-      'OPTIONS': {'environment':'floodSite.jinja2.environment'}
-    },
+    # {
+    #   'BACKEND':'django.template.backends.jinja2.Jinja2',
+    #   'DIRS': ['floodApp/template/jinja2'],
+    #   'APP_DIRS': True,
+    #   'OPTIONS': {'environment':'floodSite.jinja2.environment'}
+    # },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['floodApp/'],
+        'DIRS': ['floodApp/', 'floodApp/home/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.csrf',
             ],
         },
     },
