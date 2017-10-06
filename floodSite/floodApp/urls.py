@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse_lazy
 urlpatterns = [
     url(r'^$', views.home, name="home"),
     url(r'^register/$',views.rego, name="register"),
+    url(r'^ajax/validate_username/$', views.validate_username, name='validate_username'),
     url(r'^dashboard/$', views.dashboard, name="dashboard"),
     url(r'^profile/$', views.profile, name="profile"),
     # url(r'home/$', views.home, name="home"),
