@@ -1,0 +1,10 @@
+*.pyc
+__pycache__
+*.egg-info
+docs/_build/
+.coverage
+dist/
+.python-version
+.tox/
+categories.json
+confusables.json
