@@ -1,5 +1,5 @@
 from django.shortcuts import render , HttpResponse
-from django.contrib.auth.forms import UserCreationForm
+from floodApp.forms import UserCreationForm
 
 # Create your views here.
 def home(request):
@@ -16,7 +16,6 @@ def rego(request):
 
     else:
         form = UserCreationForm()
-
         args = {'form': form}
         return render(request,'home/template/rego.html', args)
 
