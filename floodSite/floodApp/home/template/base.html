@@ -27,17 +27,15 @@
             <li><a href="#">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li data-dropdown = "click"><span class="glyphicon glyphicon-log-in"></span>Login</a>
-             <div id="login-area" class="nav-dropdown">
-                        <form action="/" method="POST" class="inline">
-                            <label for="username">Username:</label>
-                            <input class="text-input" type="text" id="username" name="username" />
-                            <label for="password">Password:</label>
-                            <input class="text-input" type="password" id="password" name="password" />
-                            <input class="button" type="button" id="login" name="login" value="Login" />
-                        </form>
-             </div>
-            </li>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login<span id="login-button" class="glyphicon glyphicon-log-in"></span></a>
+                <div class="dropdown-menu">
+                    {% block toggle_login %}
+                        {% include "./toggle_login.html" %}
+                    {% endblock %}
+
+                </div>
+               </li>
+
           </ul>
         </div>
       </div>
