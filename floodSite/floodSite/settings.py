@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'dashboard',
     'home',
     'forum',
-    'myCalendar',
+    'schedule',
 ]
 
 MIDDLEWARE = [
