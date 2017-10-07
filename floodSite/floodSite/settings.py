@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'dashboard',
+    'home',
+    'forum',
+    'myCalendar',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +65,7 @@ TEMPLATES = [
     # },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['floodApp/', 'floodApp/home/'],
+        'DIRS': ['', ''],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
