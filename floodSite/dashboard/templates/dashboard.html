@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,7 +70,7 @@
         <!--<span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white; bottom: 40px right:100px"></span>-->
     <!--</a>-->
 
-    <button data-toggle="modal" data-target="#myModal" style="padding:0px; background:none; border:none; position:absolute; bottom: 40px; left: 275px">
+    <button href="/schedule/calendar/month/calendar/" data-toggle="modal" data-target="#myModal" style="padding:0px; background:none; border:none; position:absolute; bottom: 40px; left: 275px">
         <span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white"></span>
     </button>
 
@@ -84,8 +84,9 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                   <h4 class="modal-title">Calendar</h4>
                 </div>
-                <div style="height:400px">
+                <div>
                     {% block calendar %}
+                        <p>Cannot display calendar at the moment. Try again later</p>
                     {% endblock %}
                 </div>
                 <div class="modal-footer">

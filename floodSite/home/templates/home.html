@@ -1,4 +1,4 @@
-{% extends 'home/templates/base.html' %}
+{% extends 'main_base.html' %}
 
 {% block content %}
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -60,4 +60,35 @@
   </div>
 </div><br>
 
+{% endblock %}
+
+{% block toggle_login %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+ 
+    <form id="formLogin" class="form container-fluid" method="post">
+        {% csrf_token %}
+         {% if next %}
+                <input type="hidden" name="next" value="{{ next }}" />
+         {% endif %}
+            <div class="control-group">
+                <label class="control-label" for="username">Username</label>
+                <div class="controls">
+                    <input type="text" id="username" name="username"  placeholder="Username">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password">Password</label>
+                <div class="controls">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn">Login</button>
+                </div>
+            </div>
+    </form>
 {% endblock %}

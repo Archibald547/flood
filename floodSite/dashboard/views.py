@@ -7,3 +7,5 @@ class dashboard(TemplateView):
 
 class profile(TemplateView):
 	template_name = "profile.html"
+
+

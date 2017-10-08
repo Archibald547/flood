@@ -20,5 +20,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('home.urls')),
     url(r'^', include('dashboard.urls')),
-
+    url(r'^schedule/', include('schedule.urls')),
 ]

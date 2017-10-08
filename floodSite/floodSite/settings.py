@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home',
     'forum',
     'schedule',
+    'todo',
 ]
 
 MIDDLEWARE = [
