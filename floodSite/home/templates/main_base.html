@@ -23,13 +23,42 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="{% url 'home' %}">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href=#>Register</a></li>
+            <li><a href= "">Register</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
               <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login<span id="login-button" class="glyphicon glyphicon-log-in"></span></a>
                 <div class="dropdown-menu">
+
                     {% block toggle_login %}
+                        {% if form.errors %}
+                            <p>Your username and password didn't match. Please try again.</p>
+                        {% endif %}
+
+
+                        <form id="formLogin" class="form container-fluid" method="post">
+                            {% csrf_token %}
+                             {% if next %}
+                                    <input type="hidden" name="next" value="{{ next }}" />
+                             {% endif %}
+                                <div class="control-group">
+                                    <label class="control-label" for="username">Username</label>
+                                    <div class="controls">
+                                        <input type="text" id="username" name="username"  placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="password">Password</label>
+                                    <div class="controls">
+                                        <input type="password" name="password" id="password" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <button type="submit" class="btn">Login</button>
+                                    </div>
+                                </div>
+                        </form>
                     {% endblock %}
                 </div>
                </li>

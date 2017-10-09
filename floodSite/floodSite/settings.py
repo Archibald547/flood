@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'forum',
     'schedule',
     'todo',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,5 @@ STATIC_URL = '/static/'
 
 
 LOGIN_REDIRECT_URL = '/'
+
+ACCOUNT_ACTIVATION_DAYS = 7
