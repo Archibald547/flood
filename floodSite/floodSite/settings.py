@@ -160,5 +160,5 @@ EMAIL_HOST_PASSWORD='password'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-
-AUTH_USER_MODEL = 'core.User'
+#
+# AUTH_USER_MODEL = 'core.User'
