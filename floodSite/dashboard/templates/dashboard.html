@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
     <link href="../../static/dashboard/reset.css" rel="stylesheet">
@@ -8,6 +9,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.css' %}" type="text/css" media="screen">
+        <script type="text/javascript" src="{% static 'jquery/dist/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>
+        <script type="text/javascript" src="{% static 'schedule.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'schedule.css' %}" type="text/css" media="screen">
+        <link rel="stylesheet" href="{% static 'jquery-ui/themes/base/all.css' %}" type="text/css" media="screen">
 </head>
 <body style="margin:0px">
 
@@ -95,9 +104,10 @@
                   <h4 class="modal-title">Calendar</h4>
                 </div>
                 <div class="modal-body">
-                    {% block calendar %}
-                        <p>Cannot display calendar at the moment. Try again later</p>
-                    {% endblock %}
+                    <!--{% block calendar %}-->
+                        <!--<p>Cannot display calendar at the moment. Try again later</p>-->
+                    <!--{% endblock %}-->
+                    {% include 'base.html' %}
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
