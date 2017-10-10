@@ -1,0 +1,12 @@
+body{
+    padding-top:70px;
+}
+
+h2.title{
+    text-align: center;
+}
+
+#rego_form{
+    margin: auto;
+    padding-left:30px;
+}

@@ -40,9 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'home',
+    #third party
+    'crispy_forms',
     'forum',
     'schedule',
     'todo',
+    'registration',
+
 ]
 
 MIDDLEWARE = [
@@ -58,15 +62,10 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'floodSite.urls'
 
 TEMPLATES = [
-    # {
-    #   'BACKEND':'django.template.backends.jinja2.Jinja2',
-    #   'DIRS': ['floodApp/template/jinja2'],
-    #   'APP_DIRS': True,
-    #   'OPTIONS': {'environment':'floodSite.jinja2.environment'}
-    # },
+
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['', ''],
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,8 +128,34 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+#this is for development
 STATIC_URL = '/static/'
 
+#the server where  it will go to when live
+# STATIC_ROOT = "/var/www/example.com/static/"
 
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static")
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,"static"),
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media")
+
+#login settings
 LOGIN_REDIRECT_URL = '/'
+
+
+ACCOUNT_ACTIVATION_DAYS = 7
+
+EMAIL_HOST='localhost'
+
+EMAIL_PORT=1023
+
+EMAIL_HOST_USER='username'
+
+EMAIL_HOST_PASSWORD='password'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
