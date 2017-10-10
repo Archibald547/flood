@@ -31,55 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/floodSite/home/templates/main_base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/floodSite/floodSite/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-              <folding>
-                <element signature="e#643#675#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/floodSite/dashboard/templates/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="109" column="42" lean-forward="false" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
-              <folding>
-                <element signature="e#5635#5642#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="calendar_month.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/schedule/calendar_month.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,7 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/floodSite/floodApp/templates/forum/posts.html" />
         <option value="$PROJECT_DIR$/floodSite/floodApp/templates/forum/compose.html" />
         <option value="$PROJECT_DIR$/floodSite/floodApp/templates/home/home.html" />
         <option value="$PROJECT_DIR$/floodSite/floodApp/templates/home/main.html" />
@@ -146,15 +101,16 @@
         <option value="$PROJECT_DIR$/floodSite/home/templates/registration/registration_form.html" />
         <option value="$PROJECT_DIR$/floodSite/home/models.py" />
         <option value="$PROJECT_DIR$/floodSite/floodSite/settings.py" />
-        <option value="$PROJECT_DIR$/floodSite/dashboard/templates/dashboard.html" />
         <option value="$PROJECT_DIR$/floodSite/schedule/templates/schedule/calendar_month.html" />
         <option value="$PROJECT_DIR$/floodSite/schedule/templates/base.html" />
+        <option value="$PROJECT_DIR$/floodSite/dashboard/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/floodSite/dashboard/static/css/style_dashboard.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="112" />
-    <option name="y" value="23" />
+    <option name="x" value="188" />
+    <option name="y" value="35" />
     <option name="width" value="1440" />
     <option name="height" value="800" />
   </component>
@@ -209,28 +165,70 @@
               <item name="flood" type="b2602c69:ProjectViewProjectNode" />
               <item name="flood" type="462c0819:PsiDirectoryNode" />
               <item name="floodSite" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flood" type="462c0819:PsiDirectoryNode" />
+              <item name="floodSite" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flood" type="462c0819:PsiDirectoryNode" />
+              <item name="floodSite" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flood" type="462c0819:PsiDirectoryNode" />
+              <item name="floodSite" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flood" type="462c0819:PsiDirectoryNode" />
+              <item name="floodSite" type="462c0819:PsiDirectoryNode" />
               <item name="floodSite" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flood" type="b2602c69:ProjectViewProjectNode" />
               <item name="flood" type="462c0819:PsiDirectoryNode" />
               <item name="floodSite" type="462c0819:PsiDirectoryNode" />
-              <item name="schedule" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flood" type="b2602c69:ProjectViewProjectNode" />
               <item name="flood" type="462c0819:PsiDirectoryNode" />
               <item name="floodSite" type="462c0819:PsiDirectoryNode" />
-              <item name="schedule" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flood" type="462c0819:PsiDirectoryNode" />
+              <item name="floodSite" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flood" type="462c0819:PsiDirectoryNode" />
+              <item name="floodSite" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flood" type="b2602c69:ProjectViewProjectNode" />
               <item name="flood" type="462c0819:PsiDirectoryNode" />
               <item name="floodSite" type="462c0819:PsiDirectoryNode" />
-              <item name="schedule" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="schedule" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -249,11 +247,11 @@
       <recent name="$PROJECT_DIR$/floodSite/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/floodSite/dashboard/static/media" />
       <recent name="$PROJECT_DIR$/floodSite/home/static/css" />
       <recent name="$PROJECT_DIR$/floodSite/home/templates/registration" />
       <recent name="$PROJECT_DIR$/floodSite/home/templates" />
       <recent name="$PROJECT_DIR$/floodSite/floodApp" />
-      <recent name="$PROJECT_DIR$/floodSite/floodApp/home/template" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -282,7 +280,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="112" y="23" width="1440" height="800" extended-state="0" />
+    <frame x="188" y="35" width="1440" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23032904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -333,15 +331,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/floodSite/floodApp/home/template/main.php" />
-    <entry file="file://$PROJECT_DIR$/floodSite/floodSite/jinja2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/floodApp/template/header.html" />
     <entry file="file://$PROJECT_DIR$/floodSite/floodApp/static/js/register.js" />
     <entry file="file://$PROJECT_DIR$/floodSite/floodApp/template/footer.html" />
     <entry file="file://$PROJECT_DIR$/floodSite/floodApp/home/template/rego.html" />
@@ -509,30 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/home/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/home/templates/main_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/templates/head_css.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/floodSite/home/static/css/style_home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -573,6 +538,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/schedule/calendar_tri_month.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/schedule/calendar_week.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/home/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/templates/head_css.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="59" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/dashboard/static/media/background_dash.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/dashboard/static/css/style_dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/schedule/calendar_month.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/dashboard/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="93" column="57" lean-forward="true" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5665#5672#1" expanded="true" />
+            <marker date="1507615964000" expanded="false" signature="1525:1536" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/floodSite/floodSite/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -583,36 +626,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/schedule/calendar_tri_month.html">
+    <entry file="file://$PROJECT_DIR$/floodSite/home/templates/main_base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/dashboard/templates/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="109" column="42" lean-forward="false" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
-          <folding>
-            <element signature="e#5635#5642#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/schedule/calendar_month.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        <state relative-caret-position="180">
+          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding />
         </state>
       </provider>
