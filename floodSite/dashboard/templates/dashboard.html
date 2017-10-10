@@ -4,24 +4,26 @@
     {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
-    <link href="../../static/dashboard/reset.css" rel="stylesheet">
-    <link href="../../static/dashboard/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style_dashboard.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.css' %}" type="text/css" media="screen">
-        <script type="text/javascript" src="{% static 'jquery/dist/jquery.js' %}"></script>
-        <script type="text/javascript" src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>
-        <script type="text/javascript" src="{% static 'schedule.js' %}"></script>
-        <link rel="stylesheet" href="{% static 'schedule.css' %}" type="text/css" media="screen">
-        <link rel="stylesheet" href="{% static 'jquery-ui/themes/base/all.css' %}" type="text/css" media="screen">
+    <script type="text/javascript" src="{% static 'jquery/dist/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'schedule.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'schedule.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'jquery-ui/themes/base/all.css' %}" type="text/css" media="screen">
 </head>
 <body style="margin:0px">
 
-    <div id="wallpaper" style="position:fixed; height: 100%; width: 100%; top:0;left 0; z-index:-1">
-      <img src="https://amazinganimalphotos.com/wp-content/uploads/2016/10/landscape-6.jpg" style="width: 100%"/>
+    <!--<div id="wallpaper" style="position:fixed; height: 100%; width: 100%; top:0;left 0; z-index:-1">-->
+      <!--<img src="https://amazinganimalphotos.com/wp-content/uploads/2016/10/landscape-6.jpg" style="width: 100%"/>-->
+    <!--</div>-->
+    <div id="dash_bg">
+        <img src="/static/media/background_dash.jpg" alt="">
     </div>
 
     <div class="nav" style="position:absolute; top:20px; right:40px">
