@@ -31,7 +31,6 @@ from schedule.utils import (
     check_occurrence_permissions, coerce_date_dict,
 )
 
-
 class CalendarViewPermissionMixin(object):
     @classmethod
     def as_view(cls, **initkwargs):

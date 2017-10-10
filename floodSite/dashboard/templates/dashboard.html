@@ -70,6 +70,8 @@
         <!--<span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white; bottom: 40px right:100px"></span>-->
     <!--</a>-->
 
+    <!-- href="/schedule/calendar/month/calendar/" -->
+
     <button href="/schedule/calendar/month/calendar/" data-toggle="modal" data-target="#myModal" style="padding:0px; background:none; border:none; position:absolute; bottom: 40px; left: 275px">
         <span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white"></span>
     </button>
@@ -84,7 +86,7 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                   <h4 class="modal-title">Calendar</h4>
                 </div>
-                <div>
+                <div class="modal-body">
                     {% block calendar %}
                         <p>Cannot display calendar at the moment. Try again later</p>
                     {% endblock %}
