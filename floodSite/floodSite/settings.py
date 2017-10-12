@@ -145,12 +145,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media")
 
 #login settings
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 
 #REGISTRATION REDUX
 ACCOUNT_ACTIVATION_DAYS = 7
-
 REGISTRATION_AUTO_LOGIN = True
+SITE_ID = 1
+REGISTRATION_EMAIL_HTML = False
 
 
 #CRISPY FORM TAGS SETTINGS
@@ -158,3 +159,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 #
 # AUTH_USER_MODEL = 'core.User'
+#
+# CSRF_COOKIE_DOMAIN = None
