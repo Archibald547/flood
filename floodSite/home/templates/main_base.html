@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <title>{% block title %}Before The Flood{% endblock %}</title>
+      <title>{% block title %}Before The Flood|Register{% endblock %}</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       {% include 'head_css.html' %}
@@ -10,9 +10,7 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="0">
     {% include 'navbar.html' %}
     {% block content %}{% endblock %}
-    <footer class="container-fluid text-center">
-      <p>Footer Text</p>
-    </footer>
+    {% block footer %}{% endblock %}
 </body>
 </html>
 

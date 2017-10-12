@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dashboard',
@@ -146,18 +147,13 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media")
 #login settings
 LOGIN_REDIRECT_URL = '/'
 
-
+#REGISTRATION REDUX
 ACCOUNT_ACTIVATION_DAYS = 7
 
-EMAIL_HOST='localhost'
-
-EMAIL_PORT=1023
-
-EMAIL_HOST_USER='username'
-
-EMAIL_HOST_PASSWORD='password'
+REGISTRATION_AUTO_LOGIN = True
 
 
+#CRISPY FORM TAGS SETTINGS
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 #
