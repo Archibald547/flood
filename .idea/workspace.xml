@@ -25,7 +25,27 @@
         <entry file="file://$PROJECT_DIR$/floodSite/home/templates/registration/registration_form.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration_complete.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/floodSite/home/templates/registration/registration_complete.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration_base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/floodSite/home/templates/registration/registration_base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,14 +64,14 @@
       <file leaf-file-name="main_base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/floodSite/home/templates/main_base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <state relative-caret-position="45">
+              <caret line="3" column="46" lean-forward="false" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/floodSite/home/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -74,7 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/floodSite/floodApp/templates/forum/compose.html" />
         <option value="$PROJECT_DIR$/floodSite/floodApp/templates/home/home.html" />
         <option value="$PROJECT_DIR$/floodSite/floodApp/templates/home/main.html" />
         <option value="$PROJECT_DIR$/floodSite/floodApp/static/home/style.css" />
@@ -123,8 +142,9 @@
         <option value="$PROJECT_DIR$/floodSite/dashboard/static/css/style_dashboard.css" />
         <option value="$PROJECT_DIR$/floodSite/home/urls.py" />
         <option value="$PROJECT_DIR$/floodSite/floodSite/settings.py" />
-        <option value="$PROJECT_DIR$/floodSite/home/templates/registration/registration_form.html" />
         <option value="$PROJECT_DIR$/floodSite/home/templates/main_base.html" />
+        <option value="$PROJECT_DIR$/floodSite/home/templates/registration/registration_form.html" />
+        <option value="$PROJECT_DIR$/floodSite/home/templates/registration/registration_base.html" />
       </list>
     </option>
   </component>
@@ -309,7 +329,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/floodSite/floodApp/static/js/register.js" />
     <entry file="file://$PROJECT_DIR$/floodSite/floodApp/template/footer.html" />
     <entry file="file://$PROJECT_DIR$/floodSite/floodApp/home/template/rego.html" />
     <entry file="file://$PROJECT_DIR$/floodSite/floodApp/static/js/navigation.js" />
@@ -443,13 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/home/templates/registration/registration_complete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/floodSite/schedule/templates/schedule/calendar_tri_month.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -529,26 +541,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/home/templates/registration/registration_form.html">
+    <entry file="file://$PROJECT_DIR$/floodSite/home/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="6" column="61" lean-forward="false" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/floodSite/home/templates/main_base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        <state relative-caret-position="45">
+          <caret line="3" column="46" lean-forward="false" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/floodSite/home/urls.py">
+    <entry file="file://$PROJECT_DIR$/floodSite/home/templates/registration/registration_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="61" lean-forward="false" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+        <state relative-caret-position="270">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/home/templates/registration/registration_complete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floodSite/home/templates/registration/registration_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
