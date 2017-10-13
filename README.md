@@ -15,6 +15,8 @@ pip install django-registration-redux
 pip install django-scheduler
 
 npm install -g bower
+https://nodejs.org/en/download/  (if you don'thave npm)
+
 pip install django-bower
 
 ./manage.py bower install
