@@ -165,7 +165,7 @@ SITE_ID = 1
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 #DJANGO-SCHEDULER SETTINGS
-STATICFILES_FINDERS = ['djangobower.finders.BowerFinder',]
+# STATICFILES_FINDERS = ['djangobower.finders.BowerFinder',]
 BOWER_COMPONENTS_ROOT = 'bower_components/'
 
 #
