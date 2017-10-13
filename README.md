@@ -3,8 +3,8 @@
 ### What is this repository for? ###
 
 * Before the Flood is a motivational website which can help individuals achieve their personal goals and tasks.
-* It's a tool to increase users’ efficiency and productivity. 
-* It is a place where people can collaborate, share ideas, encourage and ask questions. 
+* It's a tool to increase users’ efficiency and productivity.
+* It is a place where people can collaborate, share ideas, encourage and ask questions.
 
 #Packages#
 /**
@@ -22,5 +22,22 @@ pip install django-bower
 ./manage.py bower install
 
 pip install django-autoslug
+*
+**/
+
+
+
+#Users for testing
+/**
+*
+
+User type: admin
+User name: superuser
+Password: superuser
+
+User type: normal
+User name: test
+Password: test1234
+
 *
 **/
