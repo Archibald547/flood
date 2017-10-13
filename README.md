@@ -20,5 +20,7 @@ https://nodejs.org/en/download/  (if you don'thave npm)
 pip install django-bower
 
 ./manage.py bower install
+
+pip install django-autoslug
 *
 **/
