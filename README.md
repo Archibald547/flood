@@ -9,7 +9,7 @@
 #Packages#
 /**
 *
-
+pip install django-crispy-forms
 pip install django-registration-redux
 
 pip install django-scheduler
