@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
+from machina import get_apps as get_machina_apps
+from machina import MACHINA_MAIN_TEMPLATE_DIR
+from machina import MACHINA_MAIN_STATIC_DIR
 
 import os
 
@@ -43,13 +46,17 @@ INSTALLED_APPS = [
     'home',
     #third party
     'crispy_forms',
-    'forum',
+    #'forum',
     'schedule',
     'todo',
     'registration',
     'djangobower',
 
-]
+    #machina forum related apps:
+    'mptt',
+    'haystack',
+    'widget_tweaks',
+] + get_machina_apps()
 
 BOWER_INSTALLED_APPS = [
     'jquery',
@@ -65,6 +72,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #machina
+    'machina.apps.forum_permission.middleware.ForumPermissionMiddleware',
 ]
 
 ROOT_URLCONF = 'floodSite.urls'
@@ -73,7 +82,10 @@ TEMPLATES = [
 
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"templates")],
+        'DIRS': [
+            os.path.join(BASE_DIR,"templates"),
+            MACHINA_MAIN_TEMPLATE_DIR,
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,7 +94,13 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.csrf',
+                #machina
+                'machina.core.context_processors.metadata',
             ],
+            #'loaders': [
+            #    'django.template.loaders.filesystems.Loader',
+            #    'django.template.loaders.app_directories.Loader',
+            #]
         },
     },
 ]
@@ -98,6 +116,25 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+
+
+#MACHINA CACHES
+CACHES = {
+  'default': {
+    'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+  },
+  'machina_attachments': {
+    'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+    'LOCATION': '/tmp',
+  }
+}
+
+#MACHINA HAYSTACKING
+HAYSTACK_CONNECTIONS = {
+  'default': {
+    'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+  },
 }
 
 
@@ -146,6 +183,8 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static")
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,"static"),
+    #machina
+    MACHINA_MAIN_STATIC_DIR,
 )
 
 MEDIA_URL = '/media/'
