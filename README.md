@@ -12,5 +12,11 @@
 
 pip install django-registration-redux
 
+pip install django-scheduler
+
+npm install -g bower
+pip install django-bower
+
+./manage.py bower install
 *
 **/
