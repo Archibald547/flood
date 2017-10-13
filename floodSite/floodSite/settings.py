@@ -47,7 +47,14 @@ INSTALLED_APPS = [
     'schedule',
     'todo',
     'registration',
+    'djangobower',
 
+]
+
+BOWER_INSTALLED_APPS = [
+    'jquery',
+    'jquery-ui',
+    'bootstrap',
 ]
 
 MIDDLEWARE = [
@@ -156,6 +163,10 @@ SITE_ID = 1
 
 #CRISPY FORM TAGS SETTINGS
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+#DJANGO-SCHEDULER SETTINGS
+STATICFILES_FINDERS = ['djangobower.finders.BowerFinder',]
+BOWER_COMPONENTS_ROOT = 'bower_components/'
 
 #
 # AUTH_USER_MODEL = 'core.User'
