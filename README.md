@@ -25,13 +25,6 @@ pip install django-autoslug
 
 pip install django-machina
 
-pip install pillow
-
-pip install django-mptt
-
-pip install django-haystack
-
-pip install django-widget-tweaks
 *
 **/
 
