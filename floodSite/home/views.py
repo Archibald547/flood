@@ -16,3 +16,11 @@ class privacy_policy(TemplateView):
     template_name = "privacy_policy.html"
 
 
+
+# class about(TemplateView):
+#     template_name = "about.html"
+#
+# class contact(TemplateView):
+#     template_name = "contact.html"
+
+
