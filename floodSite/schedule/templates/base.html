@@ -1,0 +1,26 @@
+<!--{% extends 'dashboard.html' %}-->
+{% load i18n static %}
+
+
+{% block calendar %}
+    <h3 id="demo">{% trans "This is a demo of a django-schedule calendar" %}</h3>
+    <p style="clear:both">
+
+        <div id="body">
+            {% if messages %}
+                <ul id="messages">
+                    {% for message in messages %}
+                    <li id="message_{{ forloop.counter }}"><a href="#" onclick="$('#message_{{ forloop.counter }}').fadeOut(); return false;"><small>{% trans "clear" %}</small></a> {{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% include 'calendar_month.html' %}
+            <!--{% block body %}-->
+            <!--{% endblock %}-->
+
+        </div>
+
+        <div id="footer">{% block footer %}{% endblock %}</div>
+{% endblock %}
+
