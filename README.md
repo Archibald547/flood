@@ -25,6 +25,8 @@ pip install django-autoslug
 
 pip install django-machina
 
+pip install whoosh
+
 *
 **/
 
