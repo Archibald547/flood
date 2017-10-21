@@ -14,11 +14,12 @@ class MyProfile(models.Model):
     birth_date = models.DateField(null=True, blank=True)
     bio = models.TextField(max_length=500)
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        MyProfile.objects.create(user=instance)
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+# @receiver(post_save, sender=User)
+# def create_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         MyProfile.objects.create(user=instance)
+#     instance.profile.save()
+#
+# @receiver(post_save, sender=User)
+# def save_user_profile(sender, instance, **kwargs):
+#     instance.profile.save()
