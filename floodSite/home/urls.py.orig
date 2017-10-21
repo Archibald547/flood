@@ -1,13 +1,18 @@
 from django.conf.urls import url, include
 from home import views
+<<<<<<< mine
 from home.regbackend import MyRegistrationView
 from machina.app import board
+>>>>>>> theirs
 
 
 urlpatterns = [
     url(r'^$', views.home, name="home"),
+<<<<<<< mine
     url(r'^accounts/register/$', MyRegistrationView.as_view(),name='registration_register'),
+=======
     # url(r'^forum/', include(board.urls), name='forum'),
+>>>>>>> theirs
     url(r'^accounts/', include('registration.backends.simple.urls'), name="register"),
     url(r'^privacy_policy/$', views.privacy_policy.as_view(), name="privacy_policy"),
     # url(r'^about/$', views.about.as_view(), name="about"),
