@@ -1,4 +1,4 @@
-from registration.backends.default.views import RegistrationView
+from registration.backends.simple.views import RegistrationView
 from .forms import ProfileForm
 from .models import MyProfile
 
@@ -7,6 +7,7 @@ class MyRegistrationView(RegistrationView):
 
 
     form_class = ProfileForm
+
 
     def register(self, form_class):
         new_user = super(MyRegistrationView, self).register(form_class)
@@ -20,4 +21,5 @@ class MyRegistrationView(RegistrationView):
         new_profile.save()
         return new_user
 
- #
+    def get_success_url(self, user):
+        return "/"
