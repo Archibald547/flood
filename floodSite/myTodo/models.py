@@ -3,8 +3,8 @@ from django.utils import timezone
  
 class todo(models.Model): #Table name, has to wrap models.Model to get the functionality of Django.
        
-    name = models.CharField(max_length=100) #Like a VARCHAR field
-    description = models.TextField() #Like a TEXT field
+    name = models.CharField(max_length=30) #Like a VARCHAR field
+    description = models.TextField(max_length=100) #Like a TEXT field
     date = models.DateTimeField(default=timezone.now()) #Like a DATETIME field
     completed = models.BooleanField(default=False) 
 

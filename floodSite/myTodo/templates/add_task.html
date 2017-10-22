@@ -1,5 +1,9 @@
-<h4>New Task</h4>
-<form method="POST" class="post-form">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Save</button>
-</form>
+{% extends 'dashboard.html' %}
+
+{% block todo %}
+	<p><a href="{% url 'todo' %}">Back</a></p><h4>New Task</h4>
+	<form method="POST" class="post-form">{% csrf_token %}
+	    {{ form.as_p }}
+	    <button type="submit" class="save btn btn-default">Save</button>
+	</form>
+{% endblock %}
