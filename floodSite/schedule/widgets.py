@@ -14,7 +14,7 @@ class SpectrumColorPicker(TextInput):
               '//cdnjs.cloudflare.com/ajax/libs/spectrum/1.7.1/spectrum.js',)
 
     def _render_js(self, _id, value):
-        js = """
+        js = u"""
                 <script type="text/javascript">
                     $(document).ready(function(){
                         $('#%s').spectrum({

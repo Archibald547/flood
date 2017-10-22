@@ -1,20 +1,22 @@
 from __future__ import unicode_literals
-
-import calendar as standardlib_calendar
-import datetime
-
-import pytz
-from django.conf import settings
-from django.db.models.query import prefetch_related_objects
-from django.template.defaultfilters import date as date_filter
-from django.utils import timezone
-from django.utils.dates import WEEKDAYS, WEEKDAYS_ABBR
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.six.moves.builtins import range
-from django.utils.translation import ugettext
+import pytz
+import datetime
+import calendar as standardlib_calendar
 
-from schedule.models import Occurrence
+from django.conf import settings
+try:
+    from django.db.models import prefetch_related_objects
+except ImportError:
+    from django.db.models.query import prefetch_related_objects
+
+from django.utils.translation import ugettext
+from django.utils.encoding import python_2_unicode_compatible
+from django.template.defaultfilters import date as date_filter
+from django.utils.dates import WEEKDAYS, WEEKDAYS_ABBR
 from schedule.settings import SHOW_CANCELLED_OCCURRENCES
+from schedule.models import Occurrence
+from django.utils import timezone
 
 weekday_names = []
 weekday_abbrs = []
@@ -39,7 +41,7 @@ class Period(object):
     based on its events, and its time period (start and end).
     """
     def __init__(self, events, start, end, parent_persisted_occurrences=None,
-                 occurrence_pool=None, tzinfo=pytz.utc, sorting_options=None):
+                 occurrence_pool=None, tzinfo=pytz.utc):
 
         self.utc_start = self._normalize_timezone_to_utc(start, tzinfo)
 
@@ -50,7 +52,6 @@ class Period(object):
         self.occurrence_pool = occurrence_pool
         if parent_persisted_occurrences is not None:
             self._persisted_occurrences = parent_persisted_occurrences
-        self.sorting_options = sorting_options or {}
 
     def _normalize_timezone_to_utc(self, point_in_time, tzinfo):
         if point_in_time.tzinfo is not None:
@@ -89,7 +90,7 @@ class Period(object):
         for event in self.events:
             event_occurrences = event.get_occurrences(self.start, self.end, clear_prefetch=False)
             occurrences += event_occurrences
-        return sorted(occurrences, **self.sorting_options)
+        return sorted(occurrences)
 
     def cached_get_sorted_occurrences(self):
         if hasattr(self, '_occurrences'):

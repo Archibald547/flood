@@ -1,23 +1,18 @@
 from __future__ import division
-
+from django.utils.six.moves.builtins import range
 import datetime
-
-from django import template
 from django.conf import settings
+from django import template
 from django.core.urlresolvers import reverse
-from django.utils import timezone
 from django.utils.dateformat import format
 from django.utils.html import escape
+from django.utils import timezone
 from django.utils.safestring import mark_safe
-from django.utils.six.moves.builtins import range
 from django.utils.six.moves.urllib.parse import urlencode
 
+from schedule.settings import CHECK_EVENT_PERM_FUNC, CHECK_CALENDAR_PERM_FUNC, SCHEDULER_PREVNEXT_LIMIT_SECONDS
 from schedule.models import Calendar
-from schedule.periods import weekday_abbrs, weekday_names
-from schedule.settings import (
-    CHECK_CALENDAR_PERM_FUNC, CHECK_EVENT_PERM_FUNC,
-    SCHEDULER_PREVNEXT_LIMIT_SECONDS,
-)
+from schedule.periods import weekday_names, weekday_abbrs
 
 register = template.Library()
 
@@ -124,8 +119,7 @@ class CalendarNode(template.Node):
         return ''
 
 
-@register.tag
-def get_calendar(parser, token):
+def do_get_calendar_for_object(parser, token):
     contents = token.split_contents()
     if len(contents) == 4:
         _, content_object, _, context_var = contents
@@ -149,8 +143,7 @@ class CreateCalendarNode(template.Node):
         return ''
 
 
-@register.tag
-def get_or_create_calendar(parser, token):
+def do_get_or_create_calendar_for_object(parser, token):
     contents = token.split_contents()
     if len(contents) > 2:
         obj = contents[1]
@@ -174,6 +167,9 @@ def get_or_create_calendar(parser, token):
     else:
         raise template.TemplateSyntaxError("%r tag follows form %r <content_object> [named <calendar name>] [by <distinction>] as <context_var>" % (token.split_contents()[0], token.split_contents()[0]))
     return CreateCalendarNode(obj, distinction, context_var, name)
+
+register.tag('get_calendar', do_get_calendar_for_object)
+register.tag('get_or_create_calendar', do_get_or_create_calendar_for_object)
 
 
 @register.simple_tag
@@ -203,7 +199,7 @@ def prev_url(target, calendar, period):
         return ''
 
     return mark_safe('<a href="%s%s"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>' % (
-        reverse(target, kwargs={'calendar_slug': slug}),
+        reverse(target, kwargs=dict(calendar_slug=slug)),
         querystring_for_date(period.prev().start)))
 
 
@@ -217,7 +213,7 @@ def next_url(target, calendar, period):
         return ''
 
     return mark_safe('<a href="%s%s"><span class="glyphicon glyphicon-circle-arrow-right"></span></a>' % (
-        reverse(target, kwargs={'calendar_slug': slug}),
+        reverse(target, kwargs=dict(calendar_slug=slug)),
         querystring_for_date(period.next().start)))
 
 
