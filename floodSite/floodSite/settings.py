@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     #'forum',
     'schedule',
-    'todo',
+    'myTodo',
     'registration',
     'djangobower',
 

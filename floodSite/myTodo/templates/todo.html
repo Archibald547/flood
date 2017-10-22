@@ -1,0 +1,10 @@
+<h2>todo</h2>
+ 
+{% for i in items %}
+<p>{{ i.name }} - {{ i.date|date:"D d M Y" }} <a class="btn btn-default" href="{% url 'edit_task' pk=i.pk %}"><span class="glyphicon glyphicon-pencil">Edit</span></a></p>
+
+<p>{{ i.description }}</p>
+<hr />
+{% endfor %}
+
+<a href="{% url 'post_task' %}"><span class="glyphicon glyphicon-plus">Add</span></a>
