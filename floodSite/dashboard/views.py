@@ -15,3 +15,6 @@ def dashboard(request):
 
 class profile(TemplateView):
 	template_name = "profile.html"
+
+class update_profile(TemplateView):
+	template_name = "update_profile.html"

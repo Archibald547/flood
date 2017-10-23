@@ -3,6 +3,7 @@ from .forms import ProfileForm
 from .models import MyProfile
 
 
+
 class MyRegistrationView(RegistrationView):
 
 
@@ -23,3 +24,4 @@ class MyRegistrationView(RegistrationView):
 
     def get_success_url(self, user):
         return "/"
+
