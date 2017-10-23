@@ -1,11 +1,5 @@
 syntax: glob
 README.md.orig
-floodSite/dashboard/__pycache__/__init__.cpython-36.pyc.orig
-floodSite/dashboard/__pycache__/admin.cpython-36.pyc.orig
-floodSite/dashboard/__pycache__/models.cpython-36.pyc.orig
-floodSite/dashboard/__pycache__/urls.cpython-36.pyc.orig
-floodSite/dashboard/__pycache__/views.cpython-36.pyc.orig
-floodSite/dashboard/migrations/__pycache__/__init__.cpython-36.pyc.orig
 floodSite/floodSite/__pycache__/__init__.cpython-36.pyc.orig
 floodSite/floodSite/__pycache__/wsgi.cpython-36.pyc.orig
 floodSite/forum/__pycache__/__init__.cpython-36.pyc.orig
