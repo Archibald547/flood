@@ -1,26 +1,25 @@
-# -*- coding: utf-8 -*-
 from __future__ import division, unicode_literals
-
+from django.utils.six import with_metaclass
+# -*- coding: utf-8 -*-
+from django.conf import settings as django_settings
+from dateutil import rrule
 import datetime
 
-from dateutil import rrule
-from django.conf import settings as django_settings
 from django.contrib.contenttypes import fields
+from django.db import models
+from django.db.models.base import ModelBase
+from django.db.models import Q
 from django.contrib.contenttypes.models import ContentType
 from django.core.urlresolvers import reverse
-from django.db import models
-from django.db.models import Q
-from django.db.models.base import ModelBase
 from django.template.defaultfilters import date
+from django.utils.translation import ugettext, ugettext_lazy as _
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
-from django.utils.six import with_metaclass
-from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ugettext
 
-from schedule.models.calendars import Calendar
 from schedule.models.rules import Rule
-from schedule.utils import OccurrenceReplacer, get_model_bases
+from schedule.models.calendars import Calendar
+from schedule.utils import OccurrenceReplacer
+from schedule.utils import get_model_bases
 
 freq_dict_order = {
     'YEARLY': 0,
@@ -44,12 +43,12 @@ param_dict_order = {
 
 
 class EventManager(models.Manager):
-    def get_for_object(self, content_object, distinction='', inherit=True):
+    def get_for_object(self, content_object, distinction=None, inherit=True):
         return EventRelation.objects.get_events_for_object(content_object, distinction, inherit)
 
 
 @python_2_unicode_compatible
-class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
+class Event(with_metaclass(ModelBase, *get_model_bases())):
     '''
     This model stores meta data for a date.  You can relate this data to many
     other models.
@@ -57,7 +56,7 @@ class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
     start = models.DateTimeField(_("start"), db_index=True)
     end = models.DateTimeField(_("end"), db_index=True, help_text=_("The end time must be later than the start time."))
     title = models.CharField(_("title"), max_length=255)
-    description = models.TextField(_("description"), blank=True)
+    description = models.TextField(_("description"), null=True, blank=True)
     creator = models.ForeignKey(
         django_settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -82,7 +81,7 @@ class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
         null=True,
         blank=True,
         verbose_name=_("calendar"))
-    color_event = models.CharField(_("Color event"), blank=True, max_length=10)
+    color_event = models.CharField(_("Color event"), null=True, blank=True, max_length=10)
     objects = EventManager()
 
     class Meta(object):
@@ -180,7 +179,7 @@ class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
 
     def get_rrule_object(self, tzinfo):
         if self.rule is None:
-            return
+            return 
         params = self._event_params()
         frequency = self.rule.rrule_frequency()
         if timezone.is_naive(self.start):
@@ -194,7 +193,7 @@ class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
             until = self.end_recurring_period
         else:
             until = tzinfo.normalize(
-                self.end_recurring_period.astimezone(tzinfo)).replace(tzinfo=None)
+                    self.end_recurring_period.astimezone(tzinfo)).replace(tzinfo=None)
 
         return rrule.rrule(frequency, dtstart=dtstart, until=until, **params)
 
@@ -254,7 +253,7 @@ class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
             closest_start = start_rule.before(start, inc=False)
             if closest_start is not None and closest_start + duration > start:
                 o_starts.append(closest_start)
-
+            
             # Occurrences starts that happen inside timespan (end-inclusive)
             occs = start_rule.between(start, end, inc=True)
             # The occurrence that start on the end of the timespan is potentially
@@ -354,6 +353,7 @@ class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
         event_params = {}
 
         if len(rule_params) == 0:
+            event_params['count'] = 0
             return event_params
 
         for param in rule_params:
@@ -362,13 +362,14 @@ class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
                     param in start_params):
                 sp = start_params[param]
                 if sp == rule_params[param] or (
-                        hasattr(rule_params[param], '__iter__') and
-                        sp in rule_params[param]):
+                        hasattr(rule_params[param], '__iter__')
+                        and sp in rule_params[param]):
                     event_params[param] = [sp]
                 else:
                     event_params[param] = rule_params[param]
             else:
                 event_params[param] = rule_params[param]
+
 
         return event_params
 
@@ -376,7 +377,6 @@ class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
     def event_params(self):
         event_params = self._event_params()
         start = self.effective_start
-        empty = False
         if not start:
             empty = True
         elif self.end_recurring_period and start > self.end_recurring_period:
@@ -408,7 +408,7 @@ class Event(with_metaclass(ModelBase, *get_model_bases('Event'))):
                     pass
                 return occ.end
         elif self.pk:
-            return datetime.datetime.max
+            return datetime.max
         return None
 
 
@@ -461,7 +461,7 @@ class EventRelationManager(models.Manager):
     #         eventrelation__event = event
     #     )
 
-    def get_events_for_object(self, content_object, distinction='', inherit=True):
+    def get_events_for_object(self, content_object, distinction=None, inherit=True):
         '''
         returns a queryset full of events, that relate to the object through, the
         distinction
@@ -515,19 +515,22 @@ class EventRelationManager(models.Manager):
         event_q = Q(dist_q, eventrelation__object_id=content_object.id, eventrelation__content_type=ct)
         return Event.objects.filter(inherit_q | event_q)
 
-    def create_relation(self, event, content_object, distinction=''):
+    def create_relation(self, event, content_object, distinction=None):
         """
         Creates a relation between event and content_object.
         See EventRelation for help on distinction.
         """
-        return EventRelation.objects.create(
+        er = EventRelation(
             event=event,
             distinction=distinction,
-            content_object=content_object)
+            content_object=content_object
+        )
+        er.save()
+        return er
 
 
 @python_2_unicode_compatible
-class EventRelation(with_metaclass(ModelBase, *get_model_bases('EventRelation'))):
+class EventRelation(with_metaclass(ModelBase, *get_model_bases())):
     '''
     This is for relating data to an Event, there is also a distinction, so that
     data can be related in different ways.  A good example would be, if you have
@@ -549,7 +552,7 @@ class EventRelation(with_metaclass(ModelBase, *get_model_bases('EventRelation'))
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.IntegerField()
     content_object = fields.GenericForeignKey('content_type', 'object_id')
-    distinction = models.CharField(_("distinction"), max_length=20)
+    distinction = models.CharField(_("distinction"), max_length=20, null=True)
 
     objects = EventRelationManager()
 
@@ -563,10 +566,10 @@ class EventRelation(with_metaclass(ModelBase, *get_model_bases('EventRelation'))
 
 
 @python_2_unicode_compatible
-class Occurrence(with_metaclass(ModelBase, *get_model_bases('Occurrence'))):
+class Occurrence(with_metaclass(ModelBase, *get_model_bases())):
     event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name=_("event"))
-    title = models.CharField(_("title"), max_length=255, blank=True)
-    description = models.TextField(_("description"), blank=True)
+    title = models.CharField(_("title"), max_length=255, blank=True, null=True)
+    description = models.TextField(_("description"), blank=True, null=True)
     start = models.DateTimeField(_("start"), db_index=True)
     end = models.DateTimeField(_("end"), db_index=True)
     cancelled = models.BooleanField(_("cancelled"), default=False)
@@ -585,9 +588,9 @@ class Occurrence(with_metaclass(ModelBase, *get_model_bases('Occurrence'))):
 
     def __init__(self, *args, **kwargs):
         super(Occurrence, self).__init__(*args, **kwargs)
-        if not self.title and self.event_id:
+        if self.title is None and self.event_id:
             self.title = self.event.title
-        if not self.description and self.event_id:
+        if self.description is None and self.event_id:
             self.description = self.event.description
 
     def moved(self):

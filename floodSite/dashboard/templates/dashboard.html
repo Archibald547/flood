@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
     <link rel="stylesheet" href="{% static 'css/style_dashboard.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -16,12 +15,13 @@
     <script type="text/javascript" src="{% static 'schedule.js' %}"></script>
     <link rel="stylesheet" href="{% static 'schedule.css' %}" type="text/css" media="screen">
     <link rel="stylesheet" href="{% static 'jquery-ui/themes/base/all.css' %}" type="text/css" media="screen">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block extrahead %}{% endblock %}
 </head>
-<body style="margin:0px">
-
-    <!--<div id="wallpaper" style="position:fixed; height: 100%; width: 100%; top:0;left 0; z-index:-1">-->
-      <!--<img src="https://amazinganimalphotos.com/wp-content/uploads/2016/10/landscape-6.jpg" style="width: 100%"/>-->
-    <!--</div>-->
+<body>
     <div id="dash_bg">
         <img src="/static/media/background_dash.jpg" alt="">
     </div>
@@ -31,10 +31,12 @@
         <li style="display:inline; padding: 5px; font-size:15px"><a href=#>Home</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="{% url 'profile' %}">Profile</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="/accounts/logout/">Sign Out</a></li>
+        <li style="display:inline; padding: 5px; font-size:15px"><a href="/todo/">Todo</a></li>
+        <li style="display:inline; padding: 5px; font-size:15px"><a href="/schedule/">Schedule</a></li>
       </ul>
     </div>
 
-    <nav class="navbar-fixed-bottom">
+    <div class="navbar-fixed-bottom">
         <li class="dropdown" style="position: absolute; left: 25px; bottom: 40px;">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-time" style="font-size:40px; padding:10px; color:white"></span>
@@ -66,23 +68,17 @@
             <!--<button data-toggle="modal" data-target="#myModal" style="position: absolute; left: 250px; bottom: 40px;">-->
                 <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
                     <!--<span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white"></span>-->
-                <!--</a>-->
+                <!--</aß>-->
             <!--</button>-->
         </li>
 
-        <li class="dropdown" style="position: absolute; right: 150px; bottom: 40px;">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-list" style="font-size:40px; padding:10px; color:white"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu" style="min-width: 200px;">
-                <h3 style="text-align:left; margin:10px 15px">Todo List</h3>
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">+</a></li>
-            </ul>
-        </li>
-    </nav>
+        <div class="dropup">
+            <a class="dropdown-toggle" href="/todo/" style="position: absolute; right: 150px; bottom: 40px;" data-toggle="dropdown"><span class="glyphicon glyphicon-list" style="font-size:40px; padding:10px; color:white"></span></a>
+                <div class="dropdown-menu" style="height:500px; width: 350px;overflow:auto;">
+                    {% block todo %}{% endblock %}
+                </div>
+        </div>
+    </div>
 
     <!-- Trigger the modal with a button -->
     <!--<a href="#" data-toggle="modal" data-target="#myModal" style="bottom:40px; right:100px">-->
@@ -91,25 +87,34 @@
 
     <!-- href="/schedule/calendar/month/calendar/" -->
 
-    <button href="/schedule/calendar/month/calendar/" data-toggle="modal" data-target="#myModal" style="padding:0px; background:none; border:none; position:absolute; bottom: 40px; left: 275px">
+    <button ng-href='/schedule/' data-toggle="modal" data-target="#myModal" style="padding:0px; background:none; border:none; position:absolute; bottom: 40px; left: 275px">
         <span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white"></span>
     </button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+    <!--<div ng-app="myApp" ng-controller='MyCtrl'>
+        <a ng-href='/schedule/'>This will become a link if variable link1 is set</a>
+    </div> -->
 
+    <!-- Modal -->
+<!--     <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog"> -->
             <!-- Modal content-->
-            <div class="modal-content">
+<!--             <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                   <h4 class="modal-title">Calendar</h4>
                 </div>
                 <div class="modal-body">
-                    <!--{% block calendar %}-->
-                        <!--<p>Cannot display calendar at the moment. Try again later</p>-->
-                    <!--{% endblock %}-->
-                    {% include 'base.html' %}
+                    <div ng-app="myApp" ng-controller='MyCtrl'>
+                      <button ng-click="link1='/schedule/'">click to set variable link1</button><br/>
+                      <a ng-href="{{link1}}">This will become a link if variable link1 is set</a>
+                    </div>
+
+                    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+                    <script>
+                      var module = angular.module('myApp', []);
+                      module.controller('MyCtrl', function($scope) {});
+                    </script>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -117,5 +122,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var module = angular.module('myApp', []);
+        module.controller('MyCtrl', function($scope) {});
+    </script> -->
 </body>
 </html>

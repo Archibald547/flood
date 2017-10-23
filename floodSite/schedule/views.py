@@ -1,35 +1,34 @@
-import datetime
-
-import dateutil.parser
 import pytz
-from django.conf import settings
+import datetime
+import dateutil.parser
+from django.utils.six.moves.urllib.parse import quote
+
+from django.db.models import Q, F
 from django.core.urlresolvers import reverse
-from django.db.models import F, Q
-from django.http import (
-    Http404, HttpResponseBadRequest, HttpResponseRedirect, JsonResponse,
-)
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
-from django.utils.http import is_safe_url
-from django.utils.six.moves.urllib.parse import quote
+from django.http import HttpResponseRedirect, Http404, HttpResponseBadRequest
 from django.views.decorators.http import require_POST
 from django.views.generic.base import TemplateResponseMixin
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import (
-    CreateView, DeleteView, ModelFormMixin, ProcessFormView, UpdateView,
-)
+    UpdateView, CreateView, DeleteView, ModelFormMixin, ProcessFormView)
+from django.utils.http import is_safe_url
+from django.conf import settings
 
+from schedule.settings import (GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT,
+                               EVENT_NAME_PLACEHOLDER, CHECK_EVENT_PERM_FUNC,
+                               CHECK_OCCURRENCE_PERM_FUNC, USE_FULLCALENDAR)
 from schedule.forms import EventForm, OccurrenceForm
-from schedule.models import Calendar, Event, Occurrence
+from schedule.models import Calendar, Occurrence, Event
 from schedule.periods import weekday_names
-from schedule.settings import (
-    CHECK_EVENT_PERM_FUNC, CHECK_OCCURRENCE_PERM_FUNC, EVENT_NAME_PLACEHOLDER,
-    GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT, USE_FULLCALENDAR,
-)
 from schedule.utils import (
-    check_calendar_permissions, check_event_permissions,
-    check_occurrence_permissions, coerce_date_dict,
-)
+    check_event_permissions,
+    check_calendar_permissions,
+    coerce_date_dict,
+    check_occurrence_permissions)
+
 
 class CalendarViewPermissionMixin(object):
     @classmethod
@@ -298,17 +297,16 @@ def api_occurrences(request):
     start = request.GET.get('start')
     end = request.GET.get('end')
     calendar_slug = request.GET.get('calendar_slug')
-    timezone = request.GET.get('timezone')
 
     try:
-        response_data = _api_occurrences(start, end, calendar_slug, timezone)
+        response_data = _api_occurrences(start, end, calendar_slug)
     except (ValueError, Calendar.DoesNotExist) as e:
         return HttpResponseBadRequest(e)
 
     return JsonResponse(response_data, safe=False)
 
 
-def _api_occurrences(start, end, calendar_slug, timezone):
+def _api_occurrences(start, end, calendar_slug):
 
     if not start or not end:
         raise ValueError('Start and end parameters are required')
@@ -325,14 +323,8 @@ def _api_occurrences(start, end, calendar_slug, timezone):
 
     start = convert(start)
     end = convert(end)
-    current_tz = False
-    if timezone and timezone in pytz.common_timezones:
-        # make start and end dates aware in given timezone
-        current_tz = pytz.timezone(timezone)
-        start = current_tz.localize(start)
-        end = current_tz.localize(end)
-    elif settings.USE_TZ:
-        # If USE_TZ is True, make start and end dates aware in UTC timezone
+    # If USE_TZ is True, make start and end dates aware in UTC timezone
+    if settings.USE_TZ:
         utc = pytz.UTC
         start = utc.localize(start)
         end = utc.localize(end)
@@ -374,28 +366,15 @@ def _api_occurrences(start, end, calendar_slug, timezone):
 
             recur_rule = occurrence.event.rule.name \
                 if occurrence.event.rule else None
-
-            if occurrence.event.end_recurring_period:
-                recur_period_end = occurrence.event.end_recurring_period
-                if current_tz:
-                    # make recur_period_end aware in given timezone
-                    recur_period_end = recur_period_end.astimezone(current_tz)
-                recur_period_end = recur_period_end
-            else:
-                recur_period_end = None
-
-            event_start = occurrence.start
-            event_end = occurrence.end
-            if current_tz:
-                # make event start and end dates aware in given timezone
-                event_start = event_start.astimezone(current_tz)
-                event_end = event_end.astimezone(current_tz)
+            recur_period_end = \
+                occurrence.event.end_recurring_period.isoformat() \
+                if occurrence.event.end_recurring_period else None
 
             response_data.append({
                 'id': occurrence_id,
                 'title': occurrence.title,
-                'start': event_start,
-                'end': event_end,
+                'start': occurrence.start.isoformat(),
+                'end': occurrence.end.isoformat(),
                 'existed': existed,
                 'event_id': occurrence.event.id,
                 'color': occurrence.event.color_event,
