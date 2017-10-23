@@ -1,0 +1,19 @@
+{% extends 'dashboard.html' %}
+
+{% block todo %}
+	<h2>todo</h2>
+	 
+	{% for i in items %}
+		<p>{{ i.name }} - {{ i.date|date:"D d M Y" }} 
+			<a href="{% url 'edit_task' pk=i.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> 
+			<a href="{% url 'delete_task' pk=i.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+		</p>
+
+		<p>
+			<a href="{% url 'completed' pk=i.pk %}"><span class="glyphicon glyphicon-ok" style="color: grey"></span></a> {{ i.description }}
+		</p>
+		<hr />
+	{% endfor %}
+
+	<a href="{% url 'post_task' %}"><span class="glyphicon glyphicon-plus">Add</span></a>
+{% endblock %}
