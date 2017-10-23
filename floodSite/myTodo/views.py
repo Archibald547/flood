@@ -4,6 +4,8 @@ from .add_task import PostForm
 from django.shortcuts import redirect
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
+from schedule.models import Event, EventRelation, Calendar
+import datetime
  
 def index(request):
     items = todo.objects.filter(completed=False)
@@ -28,10 +30,20 @@ def post_task(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
+        	#Post for todo list reference
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
+
+            #Event for calendar reference
+            # event = form.save(commit=False)
+            # event.title = form.cleaned_data['name']
+            # event.description = form.cleaned_data['description']
+            # event.start = form.cleaned_data['date']
+            # event.end = event.start + datetime.timedelta(minutes=30)
+            # event.save()
+
             return redirect('todo')
     else:
         form = PostForm()
