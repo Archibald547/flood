@@ -16,3 +16,4 @@ def home(request):
 
 class privacy_policy(TemplateView):
     template_name = "privacy_policy.html"
+

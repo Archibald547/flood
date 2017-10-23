@@ -9,11 +9,11 @@
       Profile
     </h1>
     <h3>Username: </h3><p>{{ user.username }}</p>
-    <h3>First Name: </h3><p>{{ user.first_name }}</p>
-    <h3>Last Name: </h3><p>{{ user.last_name }}</p>
-    <h3>Location:  </h3><p>{{ user.location }}</p>
-    <h3>Date of Birth: </h3><p>{{ user.birth_date }}</p>
-    <h3>Bio: </h3><p>{{ user.bio }} </p>
-
+    <h3>First Name: </h3><p>{{ user.myprofile.first_name }}</p>
+    <h3>Last Name: </h3><p>{{ user.myprofile.last_name }}</p>
+    <h3>Location:  </h3><p>{{ user.myrofile.location }}</p>
+    <h3>Date of Birth: </h3><p>{{ user.myprofile.birth_date }}</p>
+    <h3>Bio: </h3><p>{{ user.myprofile.bio }} </p>
+    <button href="{% url 'update_profile' %}" class='btn btn-secondary btn-block'>Update</button>
 </body>
 </html>
