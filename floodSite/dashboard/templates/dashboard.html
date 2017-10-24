@@ -28,7 +28,7 @@
 
     <div class="nav" style="position:absolute; top:20px; right:40px">
       <ul class="nav-bar" style="list-style-type: none;">
-        <li style="display:inline; padding: 5px; font-size:15px"><a href=#>Home</a></li>
+        <li style="display:inline; padding: 5px; font-size:15px"><a href="/">Home</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="{% url 'profile' %}">Profile</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="/accounts/logout/">Sign Out</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="/todo/">Todo</a></li>
@@ -72,11 +72,13 @@
             <!--</button>-->
         </li>
 
-        <div class="dropup">
-            <a class="dropdown-toggle" href="/todo/" style="position: absolute; right: 150px; bottom: 40px;" data-toggle="dropdown"><span class="glyphicon glyphicon-list" style="font-size:40px; padding:10px; color:white"></span></a>
-                <div class="dropdown-menu" style="height:500px; width: 350px;overflow:auto;">
+        <div style="width: 350px; position: absolute; right: 30px; word-wrap: break-word;">    
+            <div id="dropup" class="dropup">
+                <a onclick="displayModal()" id="todo" class="dropdown-toggle" href="/todo/" style="position: absolute; right: 40px; bottom: 40px;" data-toggle="dropdown"><span class="glyphicon glyphicon-list" style="font-size:40px; padding:10px; color:white"></span></a>
+                <div id="div1" class="dropdown-menu" style="height:500px; width: 365px; overflow:auto; position: absolute; right: 10px; bottom: 100px; padding: 10px">
                     {% block todo %}{% endblock %}
                 </div>
+            </div>
         </div>
     </div>
 
@@ -127,5 +129,24 @@
         var module = angular.module('myApp', []);
         module.controller('MyCtrl', function($scope) {});
     </script> -->
+
+    <script type="text/javascript">
+        var opened = "no"
+
+        function displayModal() {
+            if (opened == "no") {
+                console.log("opened")
+                // $.ajax({url: "/schedule/", success: function(result){
+                //     $("#div1").html(result);
+                // }});
+                document.getElementById("dropup").className = "dropup open"
+                opened = "yes"
+            } else {
+                console.log("closed")
+                document.getElementById("dropup").className = "dropup"
+                opened = "no"
+            }
+        }
+    </script>
 </body>
 </html>
