@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'myTodo',
     'registration',
     'djangobower',
+    'django_countries',
 
     #machina forum related apps:
     'mptt',
