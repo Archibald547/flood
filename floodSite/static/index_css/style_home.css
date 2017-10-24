@@ -1,0 +1,57 @@
+.img-responsive{
+    height: 30px;
+    width: 30px;
+    margin-top: 7px;
+}
+
+h2.title{
+    text-align: center;
+}
+
+#rego_form{
+    margin: auto;
+    padding-left:30px;
+}
+
+
+body, html {
+  padding-top:50px;
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+.bgimage1, .bgimage2, .bgimage3  {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.bgimage1 {
+    background-image: url("{% static 'media/homebg.jpg' %}");
+    height: 75%;
+}
+
+.bgimage2 {
+    background-image: url("{% static 'media/homebg.jpg' %}");
+    height: 60%;
+}
+
+.bgimage3 {
+    background-image: url("{% static 'media/homebg.jpg' %}");
+    height: 60%;
+}
+
+
