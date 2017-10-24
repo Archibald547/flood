@@ -19,7 +19,7 @@ class profile(TemplateView):
 	template_name = "profile.html"
 
 class reset_password(TemplateView):
-	template_name = "resetPassword.html"
+	template_name = "reset_password.html"
 #
 # class update_profile(TemplateView):
 # 	template_name = "update_profile.html"
@@ -43,7 +43,7 @@ def update_profile(request):
 
 
 
-def change_password(request):
+def reset_password(request):
     if request.method == 'POST':
         password_form = PasswordChangeForm(request.user, request.POST)
         if password_form.is_valid():
