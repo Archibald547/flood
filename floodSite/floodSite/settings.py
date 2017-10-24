@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dashboard',
     'home',
+    'dashboard',
     #third party
     'crispy_forms',
     'rest_framework',
