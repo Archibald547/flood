@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     #third party
     'crispy_forms',
+    'rest_framework',
     #'forum',
     'schedule',
     'myTodo',
