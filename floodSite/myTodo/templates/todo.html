@@ -2,19 +2,20 @@
 
 {% block todo %}
 
-	<h2>todo</h2>
-	 
-	{% for i in items %}
-		<p>{{ i.name }} - {{ i.date|date:"D d M Y" }} 
-			<a id="edit" href="{% url 'edit_task' pk=i.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> 
-			<a id="delete" href="{% url 'delete_task' pk=i.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-		</p>
+		<h2>todo</h2>
+		 
+		{% for i in items %}
+			<p>{{ i.name }} - {{ i.date|date:"D d M Y" }} 
+				<a onclick="redirectEdit(i.pk)" id="edit" href="{% url 'edit_task' pk=i.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> 
+				<a id="delete" href="{% url 'delete_task' pk=i.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+			</p>
 
-		<p>
-			<a id="complete" href="{% url 'completed' pk=i.pk %}"><span class="glyphicon glyphicon-ok" style="color: grey"></span></a> {{ i.description }}
-		</p>
-		<hr />
-	{% endfor %}
+			<p>
+				<a id="complete" href="{% url 'completed' pk=i.pk %}"><span class="glyphicon glyphicon-ok" style="color: grey"></span></a> {{ i.description }}
+			</p>
+			<hr />
+		{% endfor %}
 
-	<a id="post" href="{% url 'post_task' %}"><span class="glyphicon glyphicon-plus">Add</span></a>
+		<a id="post" href="{% url 'post_task' %}"><span class="glyphicon glyphicon-plus">Add</span></a>
+
 {% endblock %}
