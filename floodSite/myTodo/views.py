@@ -44,7 +44,7 @@ def post_task(request):
             # event.end = event.start + datetime.timedelta(minutes=30)
             # event.save()
 
-            return redirect('todo')
+            return redirect('todo_view')
     else:
         form = PostForm()
     return render(request, 'add_task.html', {'form': form})
@@ -58,7 +58,7 @@ def edit_task(request, pk):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('todo')
+            return redirect('todo_view')
     else:
         form = PostForm(instance=post)
     return render(request, 'add_task.html', {'form': form})
