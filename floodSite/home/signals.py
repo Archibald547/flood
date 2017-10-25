@@ -7,7 +7,7 @@ from django.dispatch import receiver
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         MyProfile.objects.create(user=instance)
-    instance.profile.save()
+    instance.myprofile.save()
 
 @receiver(post_save, sender=User, dispatch_uid='save_new_user_profile')
 def save_profile(sender, instance, created, **kwargs):
