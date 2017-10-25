@@ -27,6 +27,8 @@ pip install django-machina
 
 pip install whoosh
 
+pip install django-countries
+
 *
 **/
 
