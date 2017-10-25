@@ -28,7 +28,7 @@
 
     <div class="nav" style="position:absolute; top:20px; right:40px">
       <ul class="nav-bar" style="list-style-type: none;">
-        <li style="display:inline; padding: 5px; font-size:15px"><a href=#>Home</a></li>
+        <li style="display:inline; padding: 5px; font-size:15px"><a href="{% url 'home:home' %}">Home</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="{% url 'profile' %}">Profile</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="/accounts/logout/">Sign Out</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="/todo/">Todo</a></li>

@@ -42,15 +42,17 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dashboard',
     'home',
+    'dashboard',
     #third party
     'crispy_forms',
+    'rest_framework',
     #'forum',
     'schedule',
     'myTodo',
     'registration',
     'djangobower',
+    'django_countries',
 
     #machina forum related apps:
     'mptt',
