@@ -19,7 +19,7 @@ class profile(TemplateView):
 	template_name = "profile.html"
 
 class reset_password(TemplateView):
-	template_name = "reset_password.html"
+	template_name = "change_password.html"
 #
 # class update_profile(TemplateView):
 # 	template_name = "update_profile.html"
@@ -42,19 +42,23 @@ def update_profile(request):
     })
 
 
-
-def reset_password(request):
+@login_required
+def change_password(request):
     if request.method == 'POST':
         password_form = PasswordChangeForm(request.user, request.POST)
         if password_form.is_valid():
             user = password_form.save()
             update_session_auth_hash(request, user)
             messages.success(request, 'Your password was successfully updated!')
-            return redirect('reset_password')
+            return redirect('/change_password/done/')
         else:
             messages.error(request, 'Please correct the error below.')
     else:
         password_form = PasswordChangeForm(request.user)
-    return render(request, 'reset_password.html', {
+    return render(request, 'change_password.html', {
         'password_form': password_form
     })
+
+@login_required
+def change_password_done(request):
+	return render(request,'change_password_done.html')
