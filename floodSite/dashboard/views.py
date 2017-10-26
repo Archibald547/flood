@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import UpdateProfileForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.models import Group, User
+from django.http import HttpResponseRedirect
 
 @login_required(login_url='/accounts/login/')
 def dashboard(request):
@@ -58,3 +60,11 @@ def reset_password(request):
     return render(request, 'reset_password.html', {
         'password_form': password_form
     })
+
+
+@login_required
+def add_group(request):
+	current_user = request.user
+	g = Group.objects.get(name='User')
+	g.user_set.add(current_user)
+	return render(request, 'dashboard.html')
