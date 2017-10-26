@@ -49,3 +49,7 @@ h3 {
     background-image: url("../media/homebg.jpg");
     height: 60%;
 }
+
+.carousel-inner img {
+width:100%;
+}
