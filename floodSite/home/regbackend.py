@@ -1,6 +1,7 @@
 from registration.backends.simple.views import RegistrationView
 from .forms import ProfileForm
 from .models import MyProfile
+from django.contrib.auth.models import Group, User
 
 
 
@@ -20,8 +21,9 @@ class MyRegistrationView(RegistrationView):
 
         new_profile = MyProfile.objects.create(user=new_user, first_name=f_name, last_name=l_name, country = c, birth_date=b_date, bio=b)
         new_profile.save()
+        g = Group.objects.get(name='User')
+        g.user_set.add(new_user)
         return new_user
 
     def get_success_url(self, user):
         return "/"
-
