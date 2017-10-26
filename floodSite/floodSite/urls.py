@@ -18,6 +18,12 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from machina.app import board
+from rest_framework import routers
+from quickstart import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -26,6 +32,8 @@ urlpatterns = [
     url(r'^forum/', include(board.urls)),
     url(r'^schedule/', include('schedule.urls')),
     url(r'^', include('myTodo.urls')),
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # this static thing is only for development, not production
 
