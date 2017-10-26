@@ -5,10 +5,6 @@ from rest_framework import status
 from .models import MyProfile
 from .serializers import ProfileSerializer
 from django.views.generic import TemplateView
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
-from django.contrib import messages
-from home.forms import ProfileForm
 
 
 
@@ -24,3 +20,5 @@ def home(request):
 class privacy_policy(TemplateView):
     template_name = "privacy_policy.html"
 
+def password_reset(request):
+    return render(request,'registration/password_reset_form.html')

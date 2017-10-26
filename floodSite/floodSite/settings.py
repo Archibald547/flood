@@ -35,6 +35,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'home',
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
     'dashboard',
     #third party
     'crispy_forms',
@@ -50,7 +51,7 @@ INSTALLED_APPS = [
     #'forum',
     'schedule',
     'myTodo',
-    'registration',
+    # 'registration',
     'djangobower',
     'django_countries',
 
@@ -59,6 +60,8 @@ INSTALLED_APPS = [
     'haystack',
     'widget_tweaks',
 ] + get_machina_apps()
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 BOWER_INSTALLED_APPS = [
     'jquery',
