@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'myTodo',
     'registration',
     'djangobower',
+    'django_countries'
 
     #machina forum related apps:
     'mptt',
@@ -139,7 +140,9 @@ HAYSTACK_CONNECTIONS = {
   },
 }
 
-
+# MACHINA SETTINGS
+MACHINA_FORUM_NAME = 'Before the Flood: Forum'
+MACHINA_BASE_TEMPLATE_NAME = 'forum_base.html'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
