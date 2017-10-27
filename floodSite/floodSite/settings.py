@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 from machina import get_apps as get_machina_apps
 from machina import MACHINA_MAIN_TEMPLATE_DIR
 from machina import MACHINA_MAIN_STATIC_DIR
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
