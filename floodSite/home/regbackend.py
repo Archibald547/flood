@@ -14,11 +14,11 @@ class MyRegistrationView(RegistrationView):
         new_user = super(MyRegistrationView, self).register(form_class)
         f_name = form_class.cleaned_data['first_name']
         l_name = form_class.cleaned_data['last_name']
-        l = form_class.cleaned_data['location']
+        c = form_class.cleaned_data['country']
         b_date = form_class.cleaned_data['birth_date']
         b = form_class.cleaned_data['bio']
 
-        new_profile = MyProfile.objects.create(user=new_user, first_name=f_name, last_name=l_name, location = l, birth_date=b_date, bio=b)
+        new_profile = MyProfile.objects.create(user=new_user, first_name=f_name, last_name=l_name, country = c, birth_date=b_date, bio=b)
         new_profile.save()
         return new_user
 
