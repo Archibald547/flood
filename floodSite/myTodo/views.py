@@ -6,9 +6,11 @@ from django.utils import timezone
 from django.shortcuts import get_object_or_404
 from schedule.models import Event, EventRelation, Calendar
 import datetime
+from home import models as home_models
  
 def index(request):
-    items = todo.objects.filter(completed=False)
+    user_list = todo.objects.filter(username=request.user.username)
+    items = user_list.filter(completed=False)
     return render_to_response('todo.html', {'items': items}) 
 
 def completed(request, pk):
@@ -32,7 +34,8 @@ def post_task(request):
         if form.is_valid():
         	#Post for todo list reference
             post = form.save(commit=False)
-            post.author = request.user
+            # todo.user = request.user.username
+            post.username = request.user.username
             post.published_date = timezone.now()
             post.save()
 
