@@ -61,7 +61,10 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ] + get_machina_apps()
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST ='localhost'
+EMAIL_PORT= 1025
 
 BOWER_INSTALLED_APPS = [
     'jquery',
