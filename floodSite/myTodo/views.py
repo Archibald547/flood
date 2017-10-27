@@ -18,14 +18,16 @@ def completed(request, pk):
     post.completed = True
     post.save()
 
-    items = todo.objects.filter(completed=False)
+    user_list = todo.objects.filter(username=request.user.username)
+    items = user_list.filter(completed=False)
     return render_to_response('todo.html', {'items': items})    
 
 def delete_task(request, pk):
     task = todo.objects.get(pk=pk)
     task.delete()
 
-    items = todo.objects.filter(completed=False)
+    user_list = todo.objects.filter(username=request.user.username)
+    items = user_list.filter(completed=False)
     return render_to_response('todo.html', {'items': items}) 
 
 def post_task(request):
