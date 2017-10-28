@@ -58,7 +58,18 @@ INSTALLED_APPS = [
     'mptt',
     'haystack',
     'widget_tweaks',
+
+    'rest_framework',
+    'api',
 ] + get_machina_apps()
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 BOWER_INSTALLED_APPS = [
     'jquery',
