@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 
     'rest_framework',
-    'api',
+    
 ] + get_machina_apps()
 
 REST_FRAMEWORK = {
