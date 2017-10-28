@@ -35,8 +35,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'home',
-    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,14 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'schedule',
     'dashboard',
+    'home',
     #third party
     'crispy_forms',
-    'rest_framework',
     #'forum',
-    'schedule',
+    # 'schedule',
     'myTodo',
-    # 'registration',
+    'registration',
     'djangobower',
     'django_countries',
 
@@ -59,12 +58,18 @@ INSTALLED_APPS = [
     'mptt',
     'haystack',
     'widget_tweaks',
+
+    'rest_framework',
+    
 ] + get_machina_apps()
 
-
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST ='localhost'
-EMAIL_PORT= 1025
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 BOWER_INSTALLED_APPS = [
     'jquery',
@@ -146,7 +151,9 @@ HAYSTACK_CONNECTIONS = {
   },
 }
 
-
+# MACHINA SETTINGS
+MACHINA_FORUM_NAME = 'Before the Flood: Forum'
+MACHINA_BASE_TEMPLATE_NAME = 'forum_base.html'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

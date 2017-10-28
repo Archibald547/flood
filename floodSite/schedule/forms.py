@@ -3,7 +3,6 @@ from django.utils.translation import ugettext_lazy as _
 from schedule.models import Event, Occurrence
 from schedule.widgets import SpectrumColorPicker
 
-
 class SpanForm(forms.ModelForm):
     start = forms.SplitDateTimeField(label=_("start"))
     end = forms.SplitDateTimeField(label=_("end"),
