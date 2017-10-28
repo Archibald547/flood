@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from home import models as home_models
  
 class todo(models.Model): #Table name, has to wrap models.Model to get the functionality of Django.
     
