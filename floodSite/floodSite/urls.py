@@ -20,6 +20,7 @@ from django.contrib import admin
 from machina.app import board
 from rest_framework import routers
 from api import views
+from pusherchat import views as chatviews
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -35,6 +36,8 @@ urlpatterns = [
     url(r'^', include('myTodo.urls')),
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^chat/', chatviews.chat),
+    url(r'^ajax/chat/$', chatviews.broadcast),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # this static thing is only for development, not production
 

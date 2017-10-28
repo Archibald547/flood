@@ -60,7 +60,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
 
     'rest_framework',
-    
+    'api',
+    'pusherchat'
 ] + get_machina_apps()
 
 REST_FRAMEWORK = {
