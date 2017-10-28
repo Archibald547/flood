@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from quickstart.serializers import UserSerializer, GroupSerializer
-
+from quickstart.serializers import UserSerializer, GroupSerializer,ProfileSerializer
+from home.models import MyProfile
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -17,3 +17,10 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class MyProfileViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = MyProfile.objects.all()
+    serializer_class = ProfileSerializer
