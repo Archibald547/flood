@@ -499,7 +499,6 @@
         <li style="display:inline; padding: 5px; font-size:15px"><a href="{% url 'profile' %}">Profile</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="/accounts/logout/">Sign Out</a></li>
         <li style="display:inline; padding: 5px; font-size:15px"><a href="/todo/">Todo</a></li>
-        <li style="display:inline; padding: 5px; font-size:15px"><a href="/schedule/">Schedule</a></li>
       </ul>
     </div>
 
@@ -548,54 +547,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Trigger the modal with a button -->
-    <!--<a href="#" data-toggle="modal" data-target="#myModal" style="bottom:40px; right:100px">-->
-        <!--<span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white; bottom: 40px right:100px"></span>-->
-    <!--</a>-->
-
-    <!-- href="/schedule/calendar/month/calendar/" -->
-
-    <button href="/schedule/" data-toggle="modal" data-target="#myModal" style="padding:0px; background:none; border:none; position:absolute; bottom: 40px; left: 275px">
-        <span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white"></span>
-    </button>
-
-    <!--<div ng-app="myApp" ng-controller='MyCtrl'>
-        <a ng-href='/schedule/'>This will become a link if variable link1 is set</a>
-    </div> -->
-
-    <!-- Modal -->
-<!--     <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog"> -->
-            <!-- Modal content-->
-<!--             <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Calendar</h4>
-                </div>
-                <div class="modal-body">
-                    <div ng-app="myApp" ng-controller='MyCtrl'>
-                      <button ng-click="link1='/schedule/'">click to set variable link1</button><br/>
-                      <a ng-href="{{link1}}">This will become a link if variable link1 is set</a>
-                    </div>
-
-                    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-                    <script>
-                      var module = angular.module('myApp', []);
-                      module.controller('MyCtrl', function($scope) {});
-                    </script>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        var module = angular.module('myApp', []);
-        module.controller('MyCtrl', function($scope) {});
-    </script> -->
 
     <script type="text/javascript">
         var opened = "no"

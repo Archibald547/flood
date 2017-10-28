@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^', include('home.urls', namespace='home')),
     url(r'^', include('dashboard.urls')),
     url(r'^forum/', include(board.urls)),
-    url(r'^schedule/', include('schedule.urls')),
+    # url(r'^schedule/', include('schedule.urls')),
     url(r'^', include('myTodo.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # this static thing is only for development, not production
