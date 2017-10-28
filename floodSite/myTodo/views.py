@@ -6,9 +6,12 @@ from django.utils import timezone
 from django.shortcuts import get_object_or_404
 from schedule.models import Event, EventRelation, Calendar
 import datetime
+from home.models import MyProfile
+from schedule.forms import SpanForm
  
 def index(request):
-    items = todo.objects.filter(completed=False)
+    user_list = todo.objects.filter(username=request.user.username)
+    items = user_list.filter(completed=False)
     return render_to_response('todo.html', {'items': items}) 
 
 def completed(request, pk):
@@ -16,14 +19,20 @@ def completed(request, pk):
     post.completed = True
     post.save()
 
-    items = todo.objects.filter(completed=False)
+    acc = MyProfile.objects.get(user=request.user)
+    acc.exp += 1
+    acc.save()
+
+    user_list = todo.objects.filter(username=request.user.username)
+    items = user_list.filter(completed=False)
     return render_to_response('todo.html', {'items': items})    
 
 def delete_task(request, pk):
     task = todo.objects.get(pk=pk)
     task.delete()
 
-    items = todo.objects.filter(completed=False)
+    user_list = todo.objects.filter(username=request.user.username)
+    items = user_list.filter(completed=False)
     return render_to_response('todo.html', {'items': items}) 
 
 def post_task(request):
@@ -32,11 +41,23 @@ def post_task(request):
         if form.is_valid():
         	#Post for todo list reference
             post = form.save(commit=False)
-            post.author = request.user
+            # todo.user = request.user.username
+            post.username = request.user.username
             post.published_date = timezone.now()
             post.save()
 
             #Event for calendar reference
+            # e = SpanForm(post)
+            # event = e.save(commit=False)
+            # event.title = form.cleaned_data['name']
+            # event.description = form.cleaned_data['description']
+            # event.start = form.cleaned_data['date']
+            # event.end = event.start + datetime.timedelta(minutes=30)
+            # event.save()
+
+            # newEvent = EventForm(event)
+            # newEvent.save()
+
             # event = form.save(commit=False)
             # event.title = form.cleaned_data['name']
             # event.description = form.cleaned_data['description']
@@ -44,7 +65,7 @@ def post_task(request):
             # event.end = event.start + datetime.timedelta(minutes=30)
             # event.save()
 
-            return redirect('todo')
+            return redirect('todo_view')
     else:
         form = PostForm()
     return render(request, 'add_task.html', {'form': form})
@@ -58,7 +79,7 @@ def edit_task(request, pk):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('todo')
+            return redirect('todo_view')
     else:
         form = PostForm(instance=post)
     return render(request, 'add_task.html', {'form': form})
