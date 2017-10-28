@@ -42,13 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
+    'schedule',
     'dashboard',
+    'home',
     #third party
     'crispy_forms',
-    'rest_framework',
     #'forum',
-    'schedule',
+    # 'schedule',
     'myTodo',
     'registration',
     'djangobower',
@@ -147,7 +147,9 @@ HAYSTACK_CONNECTIONS = {
   },
 }
 
-
+# MACHINA SETTINGS
+MACHINA_FORUM_NAME = 'Before the Flood: Forum'
+MACHINA_BASE_TEMPLATE_NAME = 'forum_base.html'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

@@ -22,11 +22,17 @@ body, html {
   color: #777;
 }
 
-h3 {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-  color: #111;
+/*h3 {*/
+  /*letter-spacing: 5px;*/
+  /*text-transform: uppercase;*/
+  /*!*font: 20px "Lato", sans-serif;*!*/
+  /*color: #111;*/
+/*}*/
+
+h3, h4 {
+    font-family: 'Bungee Inline', cursive;
+    color: #000000;
+    font-size: 175%;
 }
 
 .bgimage1, .bgimage2, .bgimage3  {
@@ -39,19 +45,43 @@ h3 {
 
 }
 
+/*.bgimage1 {*/
+    /*background-image: url("{% static 'media/homebg.jpg' %}");*/
+    /*height: 75%;*/
+/*}*/
+
+/*.bgimage2 {*/
+    /*background-image: url("{% static 'media/homebg.jpg' %}");*/
+    /*height: 80%;*/
+/*}*/
+
+/*.bgimage3 {*/
+    /*background-image: url("{% static 'media/homebg.jpg' %}");*/
+    /*height: 80%;*/
+/*}*/
 .bgimage1 {
-    background-image: url("{% static 'media/homebg.jpg' %}");
+    background-image: url("../media/index_img/homebg.jpg");
     height: 75%;
 }
 
 .bgimage2 {
-    background-image: url("{% static 'media/homebg.jpg' %}");
+    background-image: url("../media/index_img/homebg.jpg");
     height: 60%;
 }
 
 .bgimage3 {
-    background-image: url("{% static 'media/homebg.jpg' %}");
+    background-image: url("../media/index_img/homebg.jpg");
     height: 60%;
+}
+
+/*h3, h4 {*/
+    /*font-family: 'Bungee Inline', cursive;*/
+    /*color: #000000;*/
+    /*font-size: 175%;*/
+/*}*/
+p {
+    font-family: 'Arima Madurai', cursive;
+    font-size: 150%;
 }
 
 
