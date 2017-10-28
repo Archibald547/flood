@@ -1,0 +1,65 @@
+.navbar-default {
+    background-color: #000000;
+    color: #ffffff;
+
+}
+
+.navbar-default a:hover{
+    color: #ffffff !important;
+}
+
+.breadcrumb {
+    background-color: #000000;
+    font-family: 'Bungee Shade', cursive;
+}
+
+.panel-default>.panel-heading {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Bungee Shade', cursive;
+}
+
+li a, .panel-heading a {
+    color: #ffffff;
+}
+
+.panel-body {
+    background-color: #f5f0e5;
+}
+
+p {
+    font-family: 'Amatic SC', cursive;
+    font-size: 175%;
+}
+table {
+    font-family: 'Copse', serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Josefin Slab', serif;
+}
+
+form, form p {
+    font-family: 'Sanchez', serif;
+}
+
+.pull-right a, .forumlist-top-controls a {
+    font-family: 'Arima Madurai', cursive;
+}
+
+.btn-primary, .btn-info, .btn-warning, .btn-xs {
+    font-family: 'Amatic SC', cursive;
+    font-size: 130%;
+}
+
+h1 .btn-primary {
+    font-size: 75%;
+}
+
+.forum-count-col, .forum-last-post-col, .topic-count-col, .topic-last-post-col, .moderation-col {
+    color: #ffffff !important;
+}
+
+/*body {*/
+    /*background-image: url("{% static 'media/index_img/homebg.jpg' %}");*/
+/*}*/
