@@ -1,0 +1,19 @@
+{% extends 'main_base.html' %}
+
+{% load i18n %}{% load crispy_forms_tags %}
+{% block title%}Flood|Register{% endblock %}
+{% block content %}
+
+<div class="col-sm-6 col-sm-offset-3">
+    <h2 class="title">Registration Form</h2>
+    <form class="form-horizontal" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {{ profile_form.as_p|crispy }}
+        <button type = "submit" class='btn btn-secondary btn-block' value = "{% trans 'Submit' %}">Register</button>
+    </form>
+</div>
+
+
+
+{% endblock %}
