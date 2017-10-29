@@ -19,13 +19,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/growing2.css' %}">
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+      <script>
+      function change() {
+        var exp = {{user.exp}};
+        if (exp==1){
+          includeLinkStyle("{% static 'css/growing1.css' %}");
+        }
+        if (exp==2){
+          includeLinkStyle("{% static 'css/growing2.css' %}");
+        }
+        if(exp>=3){
+          includeLinkStyle("{% static 'css/growing3.css' %}");
+        }
+      }
+      function includeLinkStyle(url) {
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = url;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      }
+      change();
+      </script>
     {% block extrahead %}{% endblock %}
 </head>
 <body>
+
       <img id="dash_bg" src="/static/media/background_dash.jpg">
+    <div>
+      <h1 class="panel-title pull-left" style="font-size:30px;">Hello, {{user.exp}} !</h1>
+    </div>
       <div id="circle" >
+
         <div class="tree">
       		<div class="trunk">
         	<div class="branch">
@@ -538,7 +564,7 @@
             <!--</button>-->
         </li>
 
-        <div style="width: 350px; position: absolute; right: 30px; word-wrap: break-word;">    
+        <div style="width: 350px; position: absolute; right: 30px; word-wrap: break-word;">
             <div id="dropup" class="dropup">
                 <a onclick="displayModal()" id="todo" class="dropdown-toggle" href="/todo/" style="position: absolute; right: 40px; bottom: 40px;" data-toggle="dropdown"><span class="glyphicon glyphicon-list" style="font-size:40px; padding:10px; color:white"></span></a>
                 <div id="div1" class="dropdown-menu" style="height:500px; width: 365px; overflow:auto; position: absolute; right: 10px; bottom: 100px; padding: 10px">
@@ -553,11 +579,11 @@
 
         $(document).ready(function() {
             window.location.href;
-            if (((window.location.href).indexOf("todo/task") !== -1) || 
-                ((window.location.href).indexOf("todo/complete") !== -1) || 
-                ((window.location.href).indexOf("todo/delete") !== -1) || 
+            if (((window.location.href).indexOf("todo/task") !== -1) ||
+                ((window.location.href).indexOf("todo/complete") !== -1) ||
+                ((window.location.href).indexOf("todo/delete") !== -1) ||
                 ((window.location.href).indexOf("todo/list") !== -1)) {
-                document.getElementById("dropup").className = "dropup open"    
+                document.getElementById("dropup").className = "dropup open"
             }
         });
 
