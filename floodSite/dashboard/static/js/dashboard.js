@@ -17,10 +17,10 @@ function startTimer(duration, display, mode) {
         display.text(minutes + ":" + seconds);
 
         if (--timer < 0) {
-            timer = duration;
+            var sound = document.getElementById("audio");
+            sound.play();
+            clearInterval(interval);
         }
-        console.log(minutes)
-        console.log(seconds)
 
     }, 1000);
 }
@@ -30,17 +30,31 @@ jQuery(function ($) {
         display = $('#value');
 
     $("#startTimer").click(function() {
+        clearInterval(interval);
         startTimer(seconds + minutes * 60, display);
     });
 
     $("#stopTimer").click(function() {
         clearInterval(interval);
-        display.text(minutes + ":" + seconds);
+        if (time != seconds + minutes * 60) {
+            display.text(minutes + ":" + seconds);
+        }
     });
 
     $("#resetTimer").click(function() {
         clearInterval(interval);
         startTimer(time, display);
+    });
+
+    $("#value").click(function() {
+       var min = prompt("How many minutes? (must be a whole number and less than or equal to 60)", "5");
+        if (Number.isInteger(Number(min)) && Number(min) <= 60) {
+            minutes = min;
+            seconds = 0;
+            time = seconds + minutes * 60,
+            clearInterval(interval);
+            startTimer(seconds + minutes * 60, display);
+        }
     });
 });
 

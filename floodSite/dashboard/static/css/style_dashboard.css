@@ -46,12 +46,12 @@
 }
 
 #value {
-	font-size: 61px;
+	font-size: 56px;
 }
 
 .glyphicon-time,
 .glyphicon-envelope,
-.glyphicon-stats,
+.glyphicon-comment,
 .glyphicon-list {
 	font-size: 40px; 
 	padding: 10px; 
@@ -70,11 +70,18 @@
 	bottom: 40px;
 }
 
+#forum {
+	position: absolute;
+	left: 175px;
+	bottom: 40px;
+}
+
 #todo_list {
 	width: 350px; 
 	position: absolute; 
 	right: 30px; 
 	word-wrap: break-word;
+	bottom: 0px;
 }
 
 #todo {
@@ -91,5 +98,14 @@
 	right: 10px; 
 	bottom: 100px; 
 	padding: 10px
+}
+
+#startTimer,
+#stopTimer, 
+#resetTimer {
+	border-radius: 5px;
+	background-color: grey;
+	color: white;
+	border: 0px;
 }
 
