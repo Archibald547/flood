@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'home',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'schedule',
     'dashboard',
-    'home',
+
     #third party
     'crispy_forms',
     #'forum',
@@ -233,3 +234,6 @@ BOWER_COMPONENTS_ROOT = 'bower_components/'
 # AUTH_USER_MODEL = 'core.User'
 #
 # CSRF_COOKIE_DOMAIN = None
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = 1025
