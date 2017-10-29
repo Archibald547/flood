@@ -1,4 +1,48 @@
 var opened = "no"
+var minutes = 5;
+var seconds = 0;
+var mode = "stop";
+var interval;
+
+function startTimer(duration, display, mode) {
+    var timer = duration;
+
+    interval = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.text(minutes + ":" + seconds);
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+        console.log(minutes)
+        console.log(seconds)
+
+    }, 1000);
+}
+
+jQuery(function ($) {
+    var time = seconds + minutes * 60,
+        display = $('#value');
+
+    $("#startTimer").click(function() {
+        startTimer(seconds + minutes * 60, display);
+    });
+
+    $("#stopTimer").click(function() {
+        clearInterval(interval);
+        display.text(minutes + ":" + seconds);
+    });
+
+    $("#resetTimer").click(function() {
+        clearInterval(interval);
+        startTimer(time, display);
+    });
+});
 
 $(document).ready(function() {
     window.location.href;
@@ -23,7 +67,12 @@ function displayModal() {
 }
 
 function showTimer() {
-
+    var x = document.getElementById("timer");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 
         // document.getElementById('timer').innerHTML = 03 + ":" + 00;

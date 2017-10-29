@@ -38,16 +38,24 @@
 }
 
 #timer {
-	text-align: center;
+	font-size: 14px;
+	position: absolute;
+	top: 60px;
+    left:50%;
+    margin-left:-70px;
+}
+
+#value {
+	font-size: 61px;
 }
 
 .glyphicon-time,
 .glyphicon-envelope,
 .glyphicon-stats,
 .glyphicon-list {
-	font-size:40px; 
-	padding:10px; 
-	color:white
+	font-size: 40px; 
+	padding: 10px; 
+	color: white
 }
 
 #time {
