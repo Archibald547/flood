@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{% static 'css/growing2.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script type="text/javascript" src="{% static 'js/dashboard.js' %}"></script>
+    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
+
     {% block extrahead %}{% endblock %}
 </head>
 <body>
@@ -504,7 +506,7 @@
     </div>
 
     <div id="timer" style="display: none;"> 
-        <span id="value">00:00</span>
+        <span id="value">05:00</span>
         <div>
             <input id="startTimer" type="button" value="Start"/>
             <input id="stopTimer" type="button" value="Stop"/>
@@ -512,26 +514,22 @@
         </div>
     </div>
 
-    <div class="navbar-fixed-bottom">
-<!--         <li class="dropdown" style="position: absolute; left: 25px; bottom: 40px;">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-time" style="font-size:40px; padding:10px; color:white"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu" style="min-width: 200px;">
-                <h3 style="text-align:left; margin:10px 15px">Timer</h3>
-                <div>Time left = <span id="timer"></span></div>
-            </ul>
-        </li> -->
-
+    <!-- <div class="navbar-fixed-bottom"> -->
         <li id="time">
             <a onclick="showTimer()">
                 <span class="glyphicon glyphicon-time"></span>
             </a>
         </li>
 
-        <li id="chat" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <li id="chat">
+            <a href="#">
                 <span class="glyphicon glyphicon-envelope"></span>
+            </a>
+        </li>
+
+        <li id="forum" href="/forum/">
+            <a href="/forum/">
+                <span class="glyphicon glyphicon-comment"></span>
             </a>
         </li>
 
@@ -543,6 +541,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </body>
 </html>
