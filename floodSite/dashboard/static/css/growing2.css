@@ -264,7 +264,7 @@
 :hover .tree .trunk .branch:nth-child(4) .leaf:nth-child(6):nth-child(even) {
   transform: translateX(-50%) rotate(70deg) scale(1);
 }
-/*
+
 .tree .trunk .branch:nth-child(5) {
   bottom: 60%;
   width: 16px;
@@ -525,6 +525,7 @@
 :hover .tree .trunk .branch:nth-child(6) .leaf:nth-child(10):nth-child(even) {
   transform: translateX(-50%) rotate(70deg) scale(1);
 }
+/*
 .tree .trunk .branch:nth-child(7) {
   bottom: 40%;
   width: 24px;
