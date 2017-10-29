@@ -22,7 +22,7 @@
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
       <script>
       function change() {
-        var exp = {{user.exp}};
+        var exp = {{user.myprofile.exp}};
         if (exp==1){
           includeLinkStyle("{% static 'css/growing1.css' %}");
         }
@@ -47,9 +47,6 @@
 <body>
 
       <img id="dash_bg" src="/static/media/background_dash.jpg">
-    <div>
-      <h1 class="panel-title pull-left" style="font-size:30px;">Hello, {{user.exp}} !</h1>
-    </div>
       <div id="circle" >
 
         <div class="tree">
