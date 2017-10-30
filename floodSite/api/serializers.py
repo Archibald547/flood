@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from home.models import MyProfile
+from myTodo.models import todo
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -19,3 +20,8 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = MyProfile
         fields = ('user','exp','username')
+
+class TodoSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = todo
+        fields = ('username','name','description','date','completed')
