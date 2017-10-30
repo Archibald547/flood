@@ -1,7 +1,8 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from api.serializers import UserSerializer, GroupSerializer,ProfileSerializer
+from api.serializers import UserSerializer, GroupSerializer,ProfileSerializer,TodoSerializer
 from home.models import MyProfile
+from myTodo.models import todo
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -20,7 +21,14 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 class MyProfileViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows groups to be viewed or edited.
+    API endpoint that allows user profiles to be viewed or edited.
     """
     queryset = MyProfile.objects.all()
     serializer_class = ProfileSerializer
+
+class TodoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows user todo tasks to be viewed or edited.
+    """
+    queryset = todo.objects.all()
+    serializer_class = TodoSerializer
