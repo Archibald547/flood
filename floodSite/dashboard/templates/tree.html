@@ -2,14 +2,14 @@
 <script>
 function change() {
   var exp = {{user.myprofile.exp}};
-  if (exp==1){
-    includeLinkStyle("{% static 'css/growing1.css' %}");
+  if (exp>15){
+    includeLinkStyle("{% static 'css/growing3.css' %}");
   }
-  if (exp==5){
+  else if (exp>5){
     includeLinkStyle("{% static 'css/growing2.css' %}");
   }
-  if(exp>=15){
-    includeLinkStyle("{% static 'css/growing3.css' %}");
+  else{
+    includeLinkStyle("{% static 'css/growing1.css' %}");
   }
 }
 function includeLinkStyle(url) {
