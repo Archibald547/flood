@@ -62,7 +62,9 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'api',
-    'pusherchat'
+    'pusherchat',
+    'pusherchat2',
+    'pusherchat3',
 ] + get_machina_apps()
 
 REST_FRAMEWORK = {
