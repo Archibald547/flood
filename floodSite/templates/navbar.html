@@ -18,6 +18,17 @@
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#privacy">Privacy Policy</a></li>
                 <li><a href="{% url 'forum:index' %}">Forum</a></li>
+                
+                <li><div class="dropdown">
+                  <button class="btn" type="button" data-toggle="dropdown">Chatrooms
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href= "/chat/">Chatroom1</a></li>
+                    <li><a href= "/chat2/">Chatroom2</a></li>
+                    <li><a href= "/chat3/">Chatroom3</a></li>
+                  </ul>
+                </div>
+              </li>
               {% endif %}
 
           </ul>
@@ -38,4 +49,3 @@
         </div>
       </div>
 </nav>
-

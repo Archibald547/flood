@@ -21,7 +21,7 @@ pusher_client = Pusher(
 # Create your views here.
 
 #login required to access this page. will redirect to admin login page.
-@login_required(login_url='/admin/login/')
+@login_required(login_url='/accounts/login/')
 def chat(request):
     return render(request,"chat2.html");
 
