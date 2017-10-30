@@ -22,7 +22,7 @@
   transition: height 10s;
 }
 :hover .tree .trunk {
-  height: 90vh;
+  height: 40vh;
 }
 .tree .trunk:before, .tree .trunk:after {
   content: "";

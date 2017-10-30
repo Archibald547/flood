@@ -4,11 +4,11 @@
     {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="{% static 'css/style_dashboard.css' %}">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" hrefs="{% static 'bootstrap/dist/css/bootstrap.css' %}" type="text/css" media="screen">
     <script type="text/javascript" src="{% static 'jquery/dist/jquery.js' %}"></script>
     <script type="text/javascript" src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{% static 'jquery-ui/themes/base/all.css' %}" type="text/css" media="screen">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="{% static 'css/style_dashboard.css' %}">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -45,7 +46,29 @@
     {% block extrahead %}{% endblock %}
 </head>
 <body>
+      <style>
+      #dash_bg {
 
+        		width:100%;
+        		position: fixed; right: 0; bottom: 0;
+        		min-width: 100%; min-height: 100%;
+        		height: auto;
+        		z-index: -100;
+        		background-size: 20% 30%;
+      }
+
+      #circle {
+      color:white;
+      width:350px;
+      height:350px;
+      background-color:#ffffff;
+      border-radius:50%;
+      position:absolute;
+      top:30%;
+      right:36%;
+      }
+
+      </style>
       <img id="dash_bg" src="/static/media/dash_img/background_dash.jpg">
       <div id="circle" >
 
