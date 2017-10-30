@@ -1,7 +1,7 @@
 from registration.backends.simple.views import RegistrationView
 from .forms import ProfileForm
 from .models import MyProfile
-from django.contrib.auth.models import Group, User
+from django.contrib.auth.models import Group
 
 
 

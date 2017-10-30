@@ -10,13 +10,13 @@
 
 .breadcrumb {
     background-color: #000000;
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Josefin Slab', cursive;
 }
 
 .panel-default>.panel-heading {
     background-color: #000000;
     color: #ffffff;
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Josefin Slab', cursive;
 }
 
 li a, .panel-heading a {

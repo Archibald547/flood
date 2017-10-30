@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 from .models import MyProfile
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -16,10 +16,3 @@ def save_profile(sender, instance, created, **kwargs):
     if created:
        profile = MyProfile(user=user)
     profile.save()
-
-@receiver(post_save, sender=User)
-def add_to_default_group(sender, **kwargs):
-    user = kwargs["instance"]
-    if kwargs["created"]:
-        group = Group.objects.get(name='Level1')
-        user.groups.add(group)
