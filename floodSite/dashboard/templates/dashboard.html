@@ -21,28 +21,195 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+      <style>
+      .nav {
+      	position:absolute;
+      	top:20px;
+      	right:40px
+      }
+
+      .nav-bar {
+      	list-style-type: none;
+      }
+
+      .nav-bar li {
+      	display:inline;
+      	padding: 5px;
+      	font-size:15px
+      }
+
+      #timer {
+      	font-size: 14px;
+      	position: absolute;
+      	top: 60px;
+          left:50%;
+          margin-left:-70px;
+      }
+
+      #value {
+      	font-size: 56px;
+      }
+
+      .glyphicon-time,
+      .glyphicon-envelope,
+      .glyphicon-comment,
+      .glyphicon-list {
+      	font-size: 40px;
+      	padding: 10px;
+      	color: white
+      }
+
+      #time {
+      	position: absolute;
+      	left: 25px;
+      	bottom: 40px;
+      }
+
+      #chat {
+      	position: absolute;
+      	left: 100px;
+      	bottom: 40px;
+      }
+
+      #forum {
+      	position: absolute;
+      	left: 175px;
+      	bottom: 40px;
+      }
+
+      #todo_list {
+      	width: 350px;
+      	position: absolute;
+      	right: 30px;
+      	word-wrap: break-word;
+      	bottom: 0px;
+      }
+
+      #todo {
+      	position: absolute;
+      	right: 40px;
+      	bottom: 40px;
+      }
+
+      #div1 {
+      	height:500px;
+      	width: 365px;
+      	overflow:auto;
+      	position: absolute;
+      	right: 10px;
+      	bottom: 100px;
+      	padding: 10px
+      }
+
+      #startTimer,
+      #stopTimer,
+      #resetTimer {
+      	border-radius: 5px;
+      	background-color: grey;
+      	color: white;
+      	border: 0px;
+      }
+      </style>
       <script>
-      function change() {
-        var exp = {{user.myprofile.exp}};
-        if (exp==1){
-          includeLinkStyle("{% static 'css/growing1.css' %}");
+    var opened = "no"
+    var minutes = 5;
+    var seconds = 0;
+    var interval;
+
+    function startTimer(duration, display, mode) {
+        var timer = duration;
+
+        interval = setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.text(minutes + ":" + seconds);
+
+            if (--timer < 0) {
+                var sound = document.getElementById("audio");
+                sound.play();
+                clearInterval(interval);
+            }
+
+        }, 1000);
+    }
+
+    jQuery(function ($) {
+        var time = seconds + minutes * 60,
+            display = $('#value');
+
+        $("#startTimer").click(function() {
+            clearInterval(interval);
+            startTimer(seconds + minutes * 60, display);
+        });
+
+        $("#stopTimer").click(function() {
+            clearInterval(interval);
+            if (time != seconds + minutes * 60) {
+                display.text(minutes + ":" + seconds);
+            }
+        });
+
+        $("#resetTimer").click(function() {
+            clearInterval(interval);
+            startTimer(time, display);
+        });
+
+        $("#value").click(function() {
+           var min = prompt("How many minutes? (must be a whole number and less than or equal to 60)", "5");
+            if (Number.isInteger(Number(min)) && Number(min) <= 60) {
+                minutes = min;
+                seconds = 0;
+                time = seconds + minutes * 60,
+                clearInterval(interval);
+                startTimer(seconds + minutes * 60, display);
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        window.location.href;
+        if (((window.location.href).indexOf("todo/task") !== -1) ||
+        ((window.location.href).indexOf("todo/complete") !== -1) ||
+        ((window.location.href).indexOf("todo/delete") !== -1) ||
+        ((window.location.href).indexOf("todo/list") !== -1)) {
+            document.getElementById("dropup").className = "dropup open"
         }
-        if (exp==2){
-          includeLinkStyle("{% static 'css/growing2.css' %}");
+
+        if ((window.location.href).indexOf("dashboard/") !== -1) {
+            console.log("");
+            var url = window.location.toString();
+            window.location = url.replace(/dashboard/, 'todo');
+
         }
-        if(exp>=3){
-          includeLinkStyle("{% static 'css/growing3.css' %}");
+    });
+
+    function displayModal() {
+        if (opened == "no") {
+            document.getElementById("dropup").className = "dropup open"
+            opened = "yes"
+        } else {
+            document.getElementById("dropup").className = "dropup"
+            opened = "no"
         }
-      }
-      function includeLinkStyle(url) {
-        var link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        link.href = url;
-        document.getElementsByTagName("head")[0].appendChild(link);
-      }
-      change();
-      </script>
+    }
+
+    function showTimer() {
+        var x = document.getElementById("timer");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    </script>
+
+
+
     {% block extrahead %}{% endblock %}
 </head>
 <body>
@@ -57,542 +224,59 @@
         		background-size: 20% 30%;
       }
 
-      #circle {
-      color:white;
-      width:350px;
-      height:350px;
-      background-color:#ffffff;
-      border-radius:50%;
-      position:absolute;
-      top:30%;
-      right:36%;
-      }
 
       </style>
       <img id="dash_bg" src="/static/media/dash_img/background_dash.jpg">
-      <div id="circle" >
+      {% block tree %}{% include 'tree.html' %}{% endblock %}
 
-        <div class="tree">
-      		<div class="trunk">
-        	<div class="branch">
-          	<div class="leaf"></div>
-         	<div class="leaf"></div>
-       	 </div>
-        	<div class="branch">
-         	<div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
-        <div class="branch">
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-          <div class="leaf"></div>
-        </div>
+
+
+      <div class="nav">
+        <ul class="nav-bar">
+          <li><a href="/">Home</a></li>
+          <li><a href="{% url 'profile' %}">Profile</a></li>
+          <li><a href="/accounts/logout/">Sign Out</a></li>
+        </ul>
       </div>
-    </div>
-  </div>
 
+      <div id="timer" style="display: none;">
+          <span id="value">05:00</span>
+          <div>
+              <input id="startTimer" type="button" value="Start"/>
+              <input id="stopTimer" type="button" value="Stop"/>
+              <input id="resetTimer" type="button" value="Reset"/>
+          </div>
+      </div>
 
-    <div class="nav" style="position:absolute; top:20px; right:40px">
-      <ul class="nav-bar" style="list-style-type: none;">
-        <li style="display:inline; padding: 5px; font-size:15px"><a href="/">Home</a></li>
-        <li style="display:inline; padding: 5px; font-size:15px"><a href="{% url 'profile' %}">Profile</a></li>
-        <li style="display:inline; padding: 5px; font-size:15px"><a href="/accounts/logout/">Sign Out</a></li>
-        <li style="display:inline; padding: 5px; font-size:15px"><a href="/todo/">Todo</a></li>
-      </ul>
-    </div>
+      <li id="time">
+          <a onclick="showTimer()">
+              <span class="glyphicon glyphicon-time"></span>
+          </a>
+      </li>
 
-    <div class="navbar-fixed-bottom">
-        <li class="dropdown" style="position: absolute; left: 25px; bottom: 40px;">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-time" style="font-size:40px; padding:10px; color:white"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu" style="min-width: 200px;">
-                <h3 style="text-align:left; margin:10px 15px">Clock</h3>
-            </ul>
-        </li>
+      <li id="chat">
+          <a href="/chat/">
+              <span class="glyphicon glyphicon-envelope"></span>
+          </a>
+      </li>
 
-        <li class="dropdown" style="position: absolute; left: 100px; bottom: 40px;">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-envelope" style="font-size:40px; padding:10px; color:white"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu" style="min-width: 200px;">
-                <h3 style="text-align:left; margin:10px 15px">Group Chat</h3>
-            </ul>
-        </li>
+      <li id="forum">
+          <a href="/forum/">
+              <span class="glyphicon glyphicon-comment"></span>
+          </a>
+      </li>
 
-        <li class="dropdown" style="position: absolute; left: 175px; bottom: 40px;">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-stats" style="font-size:40px; padding:10px; color:white"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu" style="min-width: 200px;">
-                <h3 style="text-align:left; margin:10px 15px">Stats</h3>
-            </ul>
-        </li>
+      <script>
+      </script>
 
-        <li>
-            <!--<button data-toggle="modal" data-target="#myModal" style="position: absolute; left: 250px; bottom: 40px;">-->
-                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
-                    <!--<span class="glyphicon glyphicon-calendar" style="font-size:40px; padding:10px; color:white"></span>-->
-                <!--</aß>-->
-            <!--</button>-->
-        </li>
-
-        <div style="width: 350px; position: absolute; right: 30px; word-wrap: break-word;">
-            <div id="dropup" class="dropup">
-                <a onclick="displayModal()" id="todo" class="dropdown-toggle" href="/todo/" style="position: absolute; right: 40px; bottom: 40px;" data-toggle="dropdown"><span class="glyphicon glyphicon-list" style="font-size:40px; padding:10px; color:white"></span></a>
-                <div id="div1" class="dropdown-menu" style="height:500px; width: 365px; overflow:auto; position: absolute; right: 10px; bottom: 100px; padding: 10px">
-                    {% block todo %}{% endblock %}
-                </div>
-            </div>
-        </div>
-    </div>
+      <div id="todo_list">
+          <div id="dropup" class="dropup">
+              <a onclick="displayModal()" id="todo" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span></a>
+              <div id="div1" class="dropdown-menu">
+                  {% block todo %}{% endblock %}
+              </div>
+          </div>
+      </div>
 
     <script type="text/javascript">
         var opened = "no"
