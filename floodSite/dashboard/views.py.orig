@@ -1,0 +1,27 @@
+from django.shortcuts import render
+from django.views.generic import TemplateView
+from django.conf import settings
+from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
+
+
+@login_required(login_url='/accounts/login/')
+def dashboard(request):
+<<<<<<< mine
+	return render(request,'dashboard.html')
+
+
+=======
+	return render(request,'dashboard.html')
+>>>>>>> theirs
+
+# Create your views here.
+
+class profile(TemplateView):
+<<<<<<< mine
+	template_name = "profile.html"
+
+class update_profile(TemplateView):
+	template_name = "update_profile.html"
+=======
+	template_name = "profile.html">>>>>>> theirs
