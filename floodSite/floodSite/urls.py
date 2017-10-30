@@ -21,6 +21,9 @@ from machina.app import board
 from rest_framework import routers
 from api import views
 from pusherchat import views as chatviews
+from pusherchat2 import views as chatviews2
+from pusherchat3 import views as chatviews3
+
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -38,6 +41,10 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^chat/', chatviews.chat),
     url(r'^ajax/chat/$', chatviews.broadcast),
+    url(r'^chat2/', chatviews2.chat),
+    url(r'^ajax/chat2/$', chatviews2.broadcast),
+    url(r'^chat3/', chatviews3.chat),
+    url(r'^ajax/chat3/$', chatviews3.broadcast),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # this static thing is only for development, not production
 
