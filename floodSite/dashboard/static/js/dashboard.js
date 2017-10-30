@@ -65,17 +65,21 @@ $(document).ready(function() {
     ((window.location.href).indexOf("todo/list") !== -1)) {
     	document.getElementById("dropup").className = "dropup open"    
     }
+    
+    if ((window.location.href).indexOf("dashboard/") !== -1) {
+        var url = window.location.toString();
+        window.location = url.replace(/dashboard/, 'todo');
+    }
+
 });
 
 function displayModal() {
     if (opened == "no") {
-        document.getElementById("dropup").className = "dropup"
-        opened = "yes"
-        console.log("opened")
-    } else {
         document.getElementById("dropup").className = "dropup open"
+        opened = "yes"
+    } else {
+        document.getElementById("dropup").className = "dropup"
         opened = "no"
-        console.log("closed")
     }
 }
 
