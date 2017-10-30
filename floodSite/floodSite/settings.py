@@ -36,7 +36,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home',
-    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,14 +43,15 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'schedule',
     'dashboard',
+
     #third party
     'crispy_forms',
-    'rest_framework',
     #'forum',
-    'schedule',
+    # 'schedule',
     'myTodo',
-    # 'registration',
+    'registration',
     'djangobower',
     'django_countries',
 
@@ -59,9 +59,21 @@ INSTALLED_APPS = [
     'mptt',
     'haystack',
     'widget_tweaks',
+
+    'rest_framework',
+    'api',
+    'pusherchat',
+    'pusherchat2',
+    'pusherchat3',
 ] + get_machina_apps()
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 BOWER_INSTALLED_APPS = [
     'jquery',
@@ -224,3 +236,6 @@ BOWER_COMPONENTS_ROOT = 'bower_components/'
 # AUTH_USER_MODEL = 'core.User'
 #
 # CSRF_COOKIE_DOMAIN = None
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = 1025
