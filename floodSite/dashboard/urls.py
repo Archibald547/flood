@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^update_profile/$', views.update_profile, name="update_profile"),
     url(r'^change_password/$', views.change_password, name="change_password"),
     url(r'^change_password/done/$', views.change_password_done, name="change_password_done"),
+    url(r'^chatroom_list/$', views.chatroom_list.as_view(), name="chatroom_list"),
 ]
