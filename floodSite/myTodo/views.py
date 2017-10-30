@@ -7,11 +7,12 @@ from django.shortcuts import get_object_or_404
 from schedule.models import Event, EventRelation, Calendar
 import datetime
 from home.models import MyProfile
- 
+
 def index(request):
     user_list = todo.objects.filter(username=request.user.username)
     items = user_list.filter(completed=False)
-    return render_to_response('todo.html', {'items': items}) 
+    #return render(request,'todo.html')
+    return render(request,'todo.html', {'items': items})
 
 def completed(request, pk):
     post = todo.objects.get(pk=pk)
@@ -24,7 +25,7 @@ def completed(request, pk):
 
     user_list = todo.objects.filter(username=request.user.username)
     items = user_list.filter(completed=False)
-    return render_to_response('todo.html', {'items': items})    
+    return render_to_response('todo.html', {'items': items})
 
 def delete_task(request, pk):
     task = todo.objects.get(pk=pk)
@@ -32,7 +33,7 @@ def delete_task(request, pk):
 
     user_list = todo.objects.filter(username=request.user.username)
     items = user_list.filter(completed=False)
-    return render_to_response('todo.html', {'items': items}) 
+    return render_to_response('todo.html', {'items': items})
 
 def post_task(request):
     if request.method == "POST":
@@ -61,5 +62,3 @@ def edit_task(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'add_task.html', {'form': form})
-    		
-
