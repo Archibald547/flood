@@ -1,0 +1,20 @@
+#dash_bg {
+
+  		width:100%;
+  		position: fixed; right: 0; bottom: 0;
+  		min-width: 100%; min-height: 100%;
+  		height: auto;
+  		z-index: -100;
+  		background-size: 20% 30%;
+}
+
+#circle {
+color:white;
+width:350px;
+height:350px;
+background-color:#ffffff;
+border-radius:50%;
+position:absolute;
+top:3%;
+right:3%;
+}
