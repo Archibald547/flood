@@ -1,20 +1,111 @@
 #dash_bg {
-
-  		width:100%;
-  		position: fixed; right: 0; bottom: 0;
-  		min-width: 100%; min-height: 100%;
-  		height: auto;
-  		z-index: -100;
-  		background-size: 20% 30%;
+  	width:100%;
+  	position: fixed; 
+  	right: 0; 
+  	bottom: 0;
+  	min-width: 100%; 
+  	min-height: 100%;
+  	height: auto;
+  	z-index: -100;
+  	background-size: 20% 30%;
 }
 
 #circle {
-color:white;
-width:350px;
-height:350px;
-background-color:#ffffff;
-border-radius:50%;
-position:absolute;
-top:30%;
-right:41%;
+	color:white;
+	width:350px;
+	height:350px;
+	background-color:#ffffff;
+	border-radius:50%;
+	position:absolute;
+	top:30%;
+	right:41%;
 }
+
+.nav {
+	position:absolute; 
+	top:20px; 
+	right:40px
+}
+
+.nav-bar {
+	list-style-type: none;
+}
+
+.nav-bar li {
+	display:inline; 
+	padding: 5px; 
+	font-size:15px
+}
+
+#timer {
+	font-size: 14px;
+	position: absolute;
+	top: 60px;
+    left:50%;
+    margin-left:-70px;
+}
+
+#value {
+	font-size: 56px;
+}
+
+.glyphicon-time,
+.glyphicon-envelope,
+.glyphicon-comment,
+.glyphicon-list {
+	font-size: 40px; 
+	padding: 10px; 
+	color: white
+}
+
+#time {
+	position: absolute;
+	left: 25px;
+	bottom: 40px;
+}
+
+#chat {
+	position: absolute;
+	left: 100px;
+	bottom: 40px;
+}
+
+#forum {
+	position: absolute;
+	left: 175px;
+	bottom: 40px;
+}
+
+#todo_list {
+	width: 350px; 
+	position: absolute; 
+	right: 30px; 
+	word-wrap: break-word;
+	bottom: 0px;
+}
+
+#todo {
+	position: absolute; 
+	right: 40px; 
+	bottom: 40px;
+}
+
+#div1 {
+	height:500px; 
+	width: 365px; 
+	overflow:auto; 
+	position: absolute; 
+	right: 10px; 
+	bottom: 100px; 
+	padding: 10px
+}
+
+#startTimer,
+#stopTimer, 
+#resetTimer {
+	border-radius: 5px;
+	background-color: grey;
+	color: white;
+	border: 0px;
+}
+

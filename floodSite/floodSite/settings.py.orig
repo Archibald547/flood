@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 from machina import get_apps as get_machina_apps
 from machina import MACHINA_MAIN_TEMPLATE_DIR
 from machina import MACHINA_MAIN_STATIC_DIR
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -35,8 +34,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'home',
-    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,14 +41,19 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dashboard',
+<<<<<<< mine
     'home',
+=======
+    'schedule',
+>>>>>>> theirs
+    'dashboard',
     #third party
     'crispy_forms',
+    'rest_framework',
     #'forum',
     # 'schedule',
     'myTodo',
-    # 'registration',
+    'registration',
     'djangobower',
     'django_countries',
 
@@ -59,29 +61,13 @@ INSTALLED_APPS = [
     'mptt',
     'haystack',
     'widget_tweaks',
-
-    'rest_framework',
-
 ] + get_machina_apps()
 
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
-
-
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST ='localhost'
-EMAIL_PORT= 1025
-#
-# BOWER_INSTALLED_APPS = [
-#     'jquery',
-#     'jquery-ui',
-#     'bootstrap',
-# ]
+BOWER_INSTALLED_APPS = [
+    'jquery',
+    'jquery-ui',
+    'bootstrap',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
