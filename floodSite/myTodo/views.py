@@ -25,7 +25,7 @@ def completed(request, pk):
 
     user_list = todo.objects.filter(username=request.user.username)
     items = user_list.filter(completed=False)
-    return render(request,'todo.html', {'items': items})
+    return render(request, 'todo.html', {'items': items})
 
 def delete_task(request, pk):
     task = todo.objects.get(pk=pk)
@@ -33,7 +33,7 @@ def delete_task(request, pk):
 
     user_list = todo.objects.filter(username=request.user.username)
     items = user_list.filter(completed=False)
-    return render(request,'todo.html', {'items': items})
+    return render(request, 'todo.html', {'items': items})
 
 def post_task(request):
     if request.method == "POST":

@@ -22,7 +22,10 @@ class reset_password(TemplateView):
 	template_name = "change_password.html"
 #
 # class update_profile(TemplateView):
-# 	template_name = "update_profile.html"
+# 	template_name = "update_profile.html
+
+class chatroom_list(TemplateView):
+    template_name = "chatroom_list.html"
 
 @login_required
 @transaction.atomic
