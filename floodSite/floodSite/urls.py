@@ -35,7 +35,6 @@ urlpatterns = [
     url(r'^', include('home.urls', namespace='home')),
     url(r'^', include('dashboard.urls')),
     url(r'^forum/', include(board.urls)),
-    # url(r'^schedule/', include('schedule.urls')),
     url(r'^', include('myTodo.urls')),
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),

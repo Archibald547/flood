@@ -11,7 +11,7 @@ from home.models import MyProfile
 def index(request):
     user_list = todo.objects.filter(username=request.user.username)
     items = user_list.filter(completed=False)
-    return render_to_response('todo.html', {'items': items}) 
+    return render(request, 'todo.html', {'items': items}) 
 
 def completed(request, pk):
     post = todo.objects.get(pk=pk)
