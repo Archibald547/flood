@@ -138,10 +138,10 @@ WSGI_APPLICATION = 'floodSite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'BeforeTheFloodDB',
-        'USER': 'FloodSiteDB',
+        'NAME': 'AfterTheFlood',
+        'USER': 'AfterDB',
         'PASSWORD': 'Nzhe4831',
-        'HOST': 'flooddb.cyotmn2aoadt.ap-southeast-2.rds.amazonaws.com',
+        'HOST': 'floodeddb.cyotmn2aoadt.ap-southeast-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
