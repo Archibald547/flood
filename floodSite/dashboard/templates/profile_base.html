@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include 'head_css.html' %}
+    {% include 'javascript.html' %}
+    {% load static %}
+    <script src="{% static 'js/profile.js' %}"></script>
+    <title>{% block title %}Profile{% endblock %}</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div style="padding-top:50px;"> </div>
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+            {% include 'sidebar.html' %}
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="panel-title pull-left" style="font-size:30px;">Hello, {{ user.username }} !</h1>
+                </div>
+        </div>
+        {% block content_right %}{% endblock %}
+    </div>
+</body>
+</html>

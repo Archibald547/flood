@@ -1,0 +1,38 @@
+{% extends 'profile_base.html' %}
+{% block title %}Profile{% endblock %}
+
+<body data-spy="scroll" data-target=".navbar" data-offset="0">
+
+        {% block content_right %}
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="panel-title pull-left">Your Name</h3>
+                    <br><br>
+                        <label for="First_name">First name</label>
+                        <p id="First_name">{{ user.myprofile.first_name }}</p>
+                        <label for="Last_name">Last name</label>
+                        <p id="Last_name">{{ user.myprofile.last_name }}</p>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="panel-title pull-left">Bio: </h3>
+                    <br><br>
+                    <p>{{ user.myprofile.bio }} </p>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                        <label for="Your_country">Your country</label>
+                        <p id="Your_country">{{ user.myprofile.country.name }}</p>
+                        <br>
+                        <label for="Your_birthday">Your Birthday</label>
+                        <p id="Your_birthday">{{ user.myprofile.birth_date }}</p>
+                        <br>
+                </div>
+            </div>
+        {% endblock %}
+    {% block footer %}{% endblock %}
+</body>

@@ -1,0 +1,18 @@
+{% extends 'profile_base.html' %}
+{% load i18n %}
+{% block title %}Edit Profile{% endblock %}
+<body data-spy="scroll" data-target=".navbar" data-offset="0">
+
+
+        {% block content_right %}
+
+            <div class="panel panel-default">
+                <form class="form-horizontal" method="POST">
+                  {% csrf_token %}
+                  {{ profile_form.as_p }}
+                  <button type = "submit" class='btn btn-secondary btn-block' value = "{% trans 'Submit' %}">Save changes</button>
+                </form>
+            </div>
+        {% endblock %}
+    {% block footer %}{% endblock %}
+</body>
