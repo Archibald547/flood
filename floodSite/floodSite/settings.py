@@ -128,10 +128,21 @@ WSGI_APPLICATION = 'floodSite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'BeforeTheFloodDB',
+        'USER': 'FloodSiteDB',
+        'PASSWORD': 'Nzhe4831',
+        'HOST': 'flooddb.cyotmn2aoadt.ap-southeast-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
