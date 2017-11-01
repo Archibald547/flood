@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     #'forum',
     # 'schedule',
-    'myTodo',
+    'todoList',
     'registration',
     'djangobower',
     'django_countries',
@@ -135,27 +135,38 @@ WSGI_APPLICATION = 'floodSite.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'AfterTheFlood',
-        'USER': 'AfterDB',
-        'PASSWORD': 'Nzhe4831',
-        'HOST': 'floodeddb.cyotmn2aoadt.ap-southeast-2.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'BeforeTheFloodDB',
+#         'USER': 'FloodSiteDB',
+#         'PASSWORD': 'Nzhe4831',
+#         'HOST': 'flooddb.cyotmn2aoadt.ap-southeast-2.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': '3609',
-#         'USER': 'postgres',
-#         'PASSWORD': 'superuser',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5433',
+#         'NAME': 'BeforeTheFloodDB',
+#         'USER': 'AfterDB',
+#         'PASSWORD': 'Nzhe4831',
+#         'HOST': 'floodeddb.cyotmn2aoadt.ap-southeast-2.rds.amazonaws.com',
+#         'PORT': '5432',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '3609',
+        'USER': 'postgres',
+        'PASSWORD': 'superuser',
+        'HOST': '127.0.0.1',
+        'PORT': '5433',
+    }
+}
 
 # DATABASES = {
 #     'default': {
