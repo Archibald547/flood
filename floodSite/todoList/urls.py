@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from myTodo import views
+from todoList import views
 
 urlpatterns = [
     url(r'^todo/$', views.index, name="todo"),

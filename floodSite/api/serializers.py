@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from home.models import MyProfile
-from myTodo.models import todo
+from todoList.models import todo
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
