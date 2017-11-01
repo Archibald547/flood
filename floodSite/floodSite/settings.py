@@ -146,6 +146,27 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': '3609',
+#         'USER': 'postgres',
+#         'PASSWORD': 'superuser',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5433',
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'flood',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
 #MACHINA CACHES
 CACHES = {
