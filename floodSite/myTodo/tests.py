@@ -39,14 +39,14 @@ class TodoTestCase(TestCase):
     def test_todolist_completed(self):
         """ACheck if the todolist is completed"""
         jh = todo.objects.get(username="jhua", description="movies");
-        jh.completed = True
-        jh.save()
-
+        jh.completed = True;
+        jh.save();
         gm = todo.objects.get(username="gmon", description="organise bday party");
-        gm.completed = True
-        gm.save()
+        gm.completed = True;
+        gm.save();
         self.assertEqual(jh.completed, True);
         self.assertEqual(gm.completed, True);  
+
 
 
 
