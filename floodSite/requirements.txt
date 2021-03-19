@@ -22,7 +22,7 @@ django-widget-tweaks==1.4.1
 djangorestframework==3.7.1
 icalendar==3.11.7
 idna==2.6
-Jinja2==2.9.6
+Jinja2==2.11.3
 markdown2==2.3.4
 MarkupSafe==1.0
 ndg-httpsclient==0.4.3
