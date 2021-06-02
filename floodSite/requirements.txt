@@ -23,7 +23,7 @@ djangorestframework==3.7.1
 icalendar==3.11.7
 idna==2.6
 Jinja2==2.9.6
-markdown2==2.3.4
+markdown2==2.4.0
 MarkupSafe==1.0
 ndg-httpsclient==0.4.3
 olefile==0.44
